@@ -3,11 +3,11 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.heyfinla.com"),
-  title: "finla — Yaz, faturan kesilsin",
+  title: "finla - Türkiye'nin sohbetle çalışan ilk e-fatura asistanı",
   description:
     "Türkiye'deki serbest çalışanlar ve KOBİ'ler için yapay zekâ destekli e-fatura asistanı. Sohbet ederek e-Fatura ve e-Arşiv kes, gelen faturaları yanıtla, raporlarını Excel'e dök.",
   openGraph: {
-    title: "finla — Yaz, faturan kesilsin",
+    title: "finla - Türkiye'nin sohbetle çalışan ilk e-fatura asistanı",
     description:
       "Yapay zekâ destekli, sohbet tabanlı e-fatura ve muhasebe asistanı. Tek cümleyle GİB uyumlu fatura kes.",
     url: "https://www.heyfinla.com",
@@ -17,7 +17,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "finla — Yaz, faturan kesilsin",
+    title: "finla - Türkiye'nin sohbetle çalışan ilk e-fatura asistanı",
     description:
       "Yapay zekâ destekli, sohbet tabanlı e-fatura ve muhasebe asistanı.",
   },
