@@ -1,103 +1,114 @@
 # finla
 
-> Türkiye'nin sohbetle çalışan ilk e-fatura asistanı.
+> Turkey's first chat-native e-invoice assistant.
 
-Bu dosya https://www.heyfinla.com landing içeriğiyle aynıdır. AI agent'lar için tek kaynak özetidir.
+This file mirrors the product facts on https://www.heyfinla.com (Turkish landing page). It is the single-source brief for AI agents.
 
-## Özet
+## Glossary
 
-finla, Türkiye'deki serbest çalışanlar ve KOBİ'ler için yapay zekâ destekli e-fatura asistanıdır. Form yok, menü yok, muhasebe programı ekranı yok. Fatura kesmek, sorgulamak ve paylaşmak için finla'ya yazman yeterli — gerisini yapay zekâ halleder.
+- **GİB** — Gelir İdaresi Başkanlığı (Turkish Revenue Administration)
+- **e-Fatura** — Turkey's official B2B electronic invoice standard
+- **e-Arşiv** — Turkey's electronic archive invoice standard (typically B2C / non–e-Fatura recipients)
+- **KDV** — Turkish VAT
+- **tevkifat** — VAT withholding
+- **istisna** — VAT exemption codes
+- **KOBİ** — SME (small and medium-sized enterprise)
+- **KVKK** — Turkey's personal data protection law (GDPR-analogue)
 
-Güven sinyalleri: GİB uyumlu e-Fatura & e-Arşiv · GİB onaylı entegratör altyapısı · KVKK uyumlu.
+## Summary
 
-Slogan: Menü yok, yazışalım.
+finla is an AI-powered e-invoice assistant for freelancers and SMEs (KOBİs) in Turkey. No forms, no menus, no accounting-software screens. To issue, query, or share an invoice, you message finla—AI handles the rest.
 
-## Nasıl çalışır
+Trust signals: GİB-compliant e-Fatura & e-Arşiv · GİB-approved integrator infrastructure · KVKK-compliant.
 
-Üç adım. İkisini finla yapıyor.
+Tagline: No menus—just chat. (Turkish: “Menü yok, yazışalım.”)
 
-1. Derdini yaz — “Yılmaz İnşaat'a 10.000 TL + KDV fatura kes” — günlük konuştuğun Türkçeyle, tek cümle.
-2. finla anlar ve hazırlar — Yapay zekâ alıcıyı, tutarı ve vergileri çıkarır; KDV, tevkifat ve istisna kodlarını otomatik uygular, onayına sunar.
-3. GİB'e iletilir — Onayladığın fatura, GİB onaylı entegratör üzerinden saniyeler içinde resmîleşir. Durumu sohbetten takip edersin.
+## How it works
 
-Ortalama süre: ~30 saniye — bir cümleden resmî faturaya.
+Three steps. finla does two of them.
 
-## Özellikler
+1. Describe what you need — e.g. “Issue a 10,000 TL + KDV invoice to Yılmaz İnşaat” — everyday Turkish, one sentence.
+2. finla understands and prepares — AI extracts recipient, amount, and taxes; applies KDV, tevkifat, and istisna codes automatically; asks for your approval.
+3. Submitted to GİB — Once approved, the invoice is finalized in seconds via a GİB-approved integrator. You track status in chat.
 
-Muhasebe programı değil. Muhasebe asistanı.
+Typical time: ~30 seconds from one sentence to an official invoice.
 
-- Sohbetle e-Fatura & e-Arşiv kes: Alıcı, tutar, vergi — hepsini tek cümleden çıkarır, onayınla GİB'e iletir. Fatura tipini (e-Fatura / e-Arşiv) alıcının mükellefiyetine göre kendi seçer.
-- Gelen faturalar tek listede: Entegratörden düşen her fatura anında listelenir; kabul ya da ret yanıtını sohbetten veya listeden tek dokunuşla ver.
-- Vergi zekâsı içeride: KDV oranları, tevkifat ve istisna kodları GİB kod listeleriyle birebir — sen oranı bilmesen de finla bilir.
-- Dövizli fatura, güncel kurla: “500 dolarlık fatura kes” de; finla günün kurunu çeker, TL karşılığını hesaplar, faturaya işler.
-- Raporunu iste, Excel'ini al: “Geçen ayı Excel'e dök” — muhasebecinle paylaşıma hazır .xlsx dosyası, saniyeler içinde elinde.
-- Cevaplar canlı akar: Yanıtlar kelime kelime, gerçek zamanlı gelir. Bekleme çarkı yok; finla düşünürken ne yaptığını görürsün.
+## Features
 
-## Teknoloji
+Not an accounting program. An accounting assistant.
 
-Bir sohbet balonu değil. Uçtan uca bir fatura ajanı.
+- Issue e-Fatura & e-Arşiv via chat: Extracts recipient, amount, and tax from one sentence and submits to GİB after your approval. Chooses document type (e-Fatura / e-Arşiv) from the recipient's tax status.
+- Incoming invoices in one list: Every invoice from the integrator appears instantly; accept or reject from chat or the list in one tap.
+- Tax logic built in: KDV rates, tevkifat, and istisna codes match GİB code lists—even if you don't know the rate.
+- Foreign-currency invoices at live FX: Say “issue a $500 invoice”; finla fetches the day's rate, converts to TRY, and puts it on the invoice.
+- Ask for a report, get Excel: “Export last month to Excel”—an .xlsx ready to share with your accountant, in seconds.
+- Replies stream live: Answers arrive word by word in real time. No spinner; you see what finla is doing as it thinks.
 
-Her mesaj, araç kullanan bir yapay zekâ ajanına gider: niyetini çözer, doğru aracı seçer, vergileri hesaplar ve GİB onaylı entegratör üzerinden belgeyi resmîleştirir.
+## Technology
 
-Akış: Sen (tek cümle Türkçe) → finla ajanı (Claude · 13 uzman araç) → Entegratör (GİB onaylı e-belge altyapısı) → GİB (resmî e-Fatura / e-Arşiv).
+Not a chat bubble. An end-to-end invoice agent.
 
-- 13 uzman araç — fatura kesme, sorgu, gelen kutusu, Excel, kur…
-- %100 GİB veri sözleşmesi — belge, uçtan uca GİB şemasıyla taşınır
-- <1 sn ilk yanıt — cevaplar gerçek zamanlı akışla gelir
-- 7/24 hep açık — fatura kesmek mesai saati tanımaz
+Every message goes to a tool-using AI agent: it resolves intent, picks the right tool, calculates taxes, and finalizes the document through a GİB-approved integrator.
 
-Altyapı: gerçek zamanlı akış mimarisi, sunucusuz fonksiyonlar ve uçtan uca korunan GİB veri şeması.
+Pipeline: You (one sentence of Turkish) → finla agent (Claude · 13 specialist tools) → Integrator (GİB-approved e-document infrastructure) → GİB (official e-Fatura / e-Arşiv).
 
-## Güvenlik
+- 13 specialist tools — issue, query, inbox, Excel, FX rates…
+- 100% GİB data contract — documents travel end-to-end on the GİB schema
+- <1s first token — replies stream in real time
+- 24/7 — invoicing is not limited to business hours
 
-Fintech disipliniyle inşa edildi. Faturaların ticari sırrındır. finla, ilk satırından itibaren buna göre yazıldı.
+Infrastructure: real-time streaming architecture, serverless functions, and an end-to-end protected GİB data schema.
 
-- Şifreli kimlik kasası: Entegratör kimlik bilgilerin, yalnızca sunucuda çözülebilen şifreli bir kasada saklanır. Uygulamaya hiç inmez.
-- Face ID ile uygulama kilidi: Uygulama arka plana geçince kilitlenir; dönüşte Face ID veya biyometrik doğrulama ister.
-- Telefon, SMS kodu, PIN: Şifre ezberi yok. Kaydolurken telefonuna SMS kodu gelir; doğruladıktan sonra bir PIN oluşturursun. Sonraki girişlerde telefonun ve PIN’in yeter.
-- Oturum yalnızca cihazında: Oturum anahtarları cihazının güvenli deposunda tutulur; her istek kısa ömürlü imzalı anahtarlarla taşınır.
-- Loglarda otomatik karartma: PIN, kod ve kimlik alanları sistem kayıtlarına yazılmadan önce otomatik olarak maskelenir.
-- KVKK uyumlu: Verilerin yalnızca hizmeti sunmak için işlenir; üçüncü taraflarla paylaşılmaz.
+## Security
 
-## Kimler için
+Built with fintech discipline. Invoices are commercial secrets. finla was written that way from the first line.
 
-Muhasebeci değil. Muhasebecine giden işi azaltan katman.
+- Encrypted credential vault: Integrator credentials live in a server-side encrypted vault only the server can decrypt. They never land on the app.
+- Face ID app lock: The app locks when backgrounded; return requires Face ID or biometric auth.
+- Phone, SMS code, PIN: No password to memorize. On signup you get an SMS code; after verify you set a PIN. Later logins need your phone and PIN.
+- Session on-device only: Session keys stay in the device secure store; each request uses short-lived signed keys.
+- Automatic log redaction: PIN, codes, and identity fields are masked before they can hit system logs.
+- KVKK-compliant: Data is processed only to provide the service; not shared with third parties.
 
-- Serbest çalışanlar: Ay sonunda tek kalemlik fatura için muhasebe programı açmak istemeyen freelancer'lar. Yaz, kes, işine dön.
-- KOBİ sahipleri: Muhasebecisiyle arasında hızlı, self-servis bir katman isteyen işletmeler. Raporu finla'dan al, Excel'i muhasebeciye gönder.
-- E-ticaret esnafı: Gün içinde tekrarlayan, yüksek hacimli fatura kesen satıcılar. Sipariş bilgisini yapıştır, gerisi otomatik.
+## Who it's for
 
-## SSS
+Not a replacement for your accountant. A layer that reduces the work that reaches them.
 
-### finla ile kestiğim faturalar resmî mi?
-Evet. Faturalar GİB onaylı bir e-belge entegratörü üzerinden, GİB'in e-Fatura ve e-Arşiv standartlarına birebir uygun kesilir. Herhangi bir muhasebe programından kesilen faturayla aynı hukuki geçerliliğe sahiptir.
+- Freelancers: Don't want to open accounting software for a single line-item invoice at month-end. Write, issue, get back to work.
+- SME (KOBİ) owners: Want a fast self-serve layer between them and their accountant. Get the report from finla, send the Excel to the accountant.
+- E-commerce sellers: High-volume, repetitive invoicing during the day. Paste order details; the rest is automatic.
 
-### e-Fatura mı, e-Arşiv mi keseceğimi bilmem gerekiyor mu?
-Hayır. Alıcının e-Fatura mükellefi olup olmadığını finla kontrol eder ve doğru belge tipini kendisi seçer. Sen sadece kime, ne kadar keseceğini yaz.
+## FAQ
 
-### KDV, tevkifat, istisna gibi konuları bilmem gerekir mi?
-Gerekmez. finla KDV oranlarını, tevkifat ve istisna kodlarını GİB kod listeleriyle birebir bilir ve faturana otomatik uygular. Yine de göndermeden önce her kalemi onayına sunar.
+### Are invoices I issue with finla official?
+Yes. Invoices are issued through a GİB-approved e-document integrator, fully aligned with GİB e-Fatura and e-Arşiv standards. They have the same legal validity as invoices from any accounting program.
 
-### Dövizli fatura kesebilir miyim?
-Evet. “500 dolarlık fatura kes” dediğinde finla günün kurunu çeker, TL karşılığını hesaplar ve faturaya işler.
+### Do I need to know whether to issue e-Fatura or e-Arşiv?
+No. finla checks whether the recipient is an e-Fatura taxpayer and chooses the correct document type. You only say who and how much.
 
-### Verilerim ve GİB şifrelerim güvende mi?
-Entegratör kimlik bilgilerin sunucu tarafında şifreli bir kasada saklanır ve uygulamana hiç inmez. Oturumun yalnızca cihazının güvenli deposunda tutulur; uygulama Face ID ile kilitlenir. Hassas alanlar sistem kayıtlarına dahi yazılmaz.
+### Do I need to know KDV, tevkifat, istisna, etc.?
+No. finla applies KDV rates, tevkifat, and istisna codes from GİB code lists automatically. It still shows every line for your approval before sending.
 
-### Muhasebecimden vazgeçmem mi gerekiyor?
-Hayır — tam tersi. finla, muhasebecine giden günlük işleri (fatura kesme, takip, liste çıkarma) senin üzerinden alır; dönem sonunda tek komutla Excel çıktısını muhasebecinle paylaşırsın.
+### Can I issue foreign-currency invoices?
+Yes. When you say “issue a $500 invoice,” finla fetches the day's rate, converts to TRY, and writes it on the invoice.
 
-### Nasıl başlarım?
-Uygulamayı indir, telefon numaranı gir. SMS’le gelen kodu doğrula, ardından sonraki girişlerin için bir PIN oluştur. Mevcut e-fatura hesabını bağladıktan sonra ilk faturanı sohbetten kesebilirsin — hepsi birkaç dakika sürer.
+### Are my data and GİB credentials safe?
+Integrator credentials are stored in a server-side encrypted vault and never download to the app. Your session stays in the device secure store; the app locks with Face ID. Sensitive fields are not written to system logs.
 
-## İndirme
+### Do I have to give up my accountant?
+No—the opposite. finla takes daily work off your plate (issuing, tracking, exporting lists); at period end you share an Excel export with your accountant in one command.
 
-App Store ve Google Play üzerinden indirilebilir (mağaza linkleri yakında). Kredi kartı gerekmez · Telefonunla kaydol, SMS kodunu doğrula.
+### How do I get started?
+Download the app, enter your phone number. Verify the SMS code, then set a PIN for later logins. Connect your existing e-invoice account and issue your first invoice from chat—usually a few minutes.
+
+## Download
+
+Available on the App Store and Google Play (store links coming soon). No credit card required · Sign up with your phone, verify the SMS code.
 
 ## Site
 
-- Ana sayfa: https://www.heyfinla.com/
+- Homepage: https://www.heyfinla.com/
 - Agent index: https://www.heyfinla.com/llms.txt
-- Bu dosya: https://www.heyfinla.com/llms-full.txt
+- This file: https://www.heyfinla.com/llms-full.txt
 
-© 2026 finla. Tüm hakları saklıdır.
+© 2026 finla. All rights reserved.

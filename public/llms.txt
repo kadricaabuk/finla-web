@@ -1,23 +1,23 @@
 # finla
 
-> Türkiye'nin sohbetle çalışan ilk e-fatura asistanı. Serbest çalışanlar ve KOBİ'ler için yapay zekâ destekli, sohbet tabanlı e-Fatura ve e-Arşiv asistanı.
+> Turkey's first chat-native e-invoice assistant. An AI-powered, conversation-based e-Fatura and e-Arşiv assistant for freelancers and SMEs (KOBİs) in Turkey.
 
-finla, form ve menü yerine doğal Türkçe sohbetle GİB uyumlu e-Fatura / e-Arşiv kesmeni, gelen faturaları yanıtlamanı ve raporlarını Excel'e dökmeni sağlar. Faturalar GİB onaylı e-belge entegratörü üzerinden resmîleşir.
+finla lets you issue GİB-compliant e-Fatura / e-Arşiv invoices in natural Turkish chat—no forms or menus—reply to incoming invoices, and export reports to Excel. Invoices are finalized through a GİB-approved e-document integrator.
 
-## Ürün
+## Product
 
-- [finla ana sayfa](https://www.heyfinla.com/): Ürün tanıtımı, özellikler, güvenlik, kimler için ve SSS
-- [Tam ürün özeti (llms-full)](https://www.heyfinla.com/llms-full.txt): Landing ile aynı içerikte, agent'lar için tek dosyalık ürün gerçeği
+- [finla homepage](https://www.heyfinla.com/): Product overview, features, security, audience, and FAQ (Turkish landing page)
+- [Full product brief (llms-full)](https://www.heyfinla.com/llms-full.txt): Same facts as the landing, in one file for AI agents
 
-## Bölümler
+## Sections
 
-- [Özellikler](https://www.heyfinla.com/#ozellikler): Sohbetle fatura, gelen kutu, vergi zekâsı, döviz, Excel rapor, canlı yanıt
-- [Nasıl çalışır](https://www.heyfinla.com/#nasil-calisir): Yaz → finla hazırlar → GİB'e iletilir
-- [Güvenlik](https://www.heyfinla.com/#guvenlik): Şifreli kimlik kasası, Face ID, PIN, cihaz oturumu, KVKK
-- [Teknoloji](https://www.heyfinla.com/#teknoloji): Araç kullanan fatura ajanı, GİB onaylı entegratör
-- [Kimler için](https://www.heyfinla.com/#kimler-icin): Serbest çalışanlar, KOBİ sahipleri, e-ticaret esnafı
-- [SSS](https://www.heyfinla.com/#sss): Resmî fatura, e-Fatura/e-Arşiv, KDV, döviz, güvenlik, muhasebeci
+- [Features](https://www.heyfinla.com/#ozellikler): Chat invoicing, inbox, tax logic, FX, Excel reports, live streaming replies
+- [How it works](https://www.heyfinla.com/#nasil-calisir): Write → finla prepares → submit to GİB
+- [Security](https://www.heyfinla.com/#guvenlik): Encrypted credential vault, Face ID, PIN, on-device session, KVKK
+- [Technology](https://www.heyfinla.com/#teknoloji): Tool-using invoice agent, GİB-approved integrator
+- [Who it's for](https://www.heyfinla.com/#kimler-icin): Freelancers, SME owners, e-commerce sellers
+- [FAQ](https://www.heyfinla.com/#sss): Official invoices, e-Fatura/e-Arşiv, VAT (KDV), FX, security, accountant
 
 ## Optional
 
-- [İndir](https://www.heyfinla.com/#indir): App Store ve Google Play (mağaza linkleri yakında)
+- [Download](https://www.heyfinla.com/#indir): App Store and Google Play (store links coming soon)
