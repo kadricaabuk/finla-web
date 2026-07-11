@@ -1,0 +1,23 @@
+# finla
+
+> Türkiye'nin sohbetle çalışan ilk e-fatura asistanı. Serbest çalışanlar ve KOBİ'ler için yapay zekâ destekli, sohbet tabanlı e-Fatura ve e-Arşiv asistanı.
+
+finla, form ve menü yerine doğal Türkçe sohbetle GİB uyumlu e-Fatura / e-Arşiv kesmeni, gelen faturaları yanıtlamanı ve raporlarını Excel'e dökmeni sağlar. Faturalar GİB onaylı e-belge entegratörü üzerinden resmîleşir.
+
+## Ürün
+
+- [finla ana sayfa](https://www.heyfinla.com/): Ürün tanıtımı, özellikler, güvenlik, kimler için ve SSS
+- [Tam ürün özeti (llms-full)](https://www.heyfinla.com/llms-full.txt): Landing ile aynı içerikte, agent'lar için tek dosyalık ürün gerçeği
+
+## Bölümler
+
+- [Özellikler](https://www.heyfinla.com/#ozellikler): Sohbetle fatura, gelen kutu, vergi zekâsı, döviz, Excel rapor, canlı yanıt
+- [Nasıl çalışır](https://www.heyfinla.com/#nasil-calisir): Yaz → finla hazırlar → GİB'e iletilir
+- [Güvenlik](https://www.heyfinla.com/#guvenlik): Şifreli kimlik kasası, Face ID, PIN, cihaz oturumu, KVKK
+- [Teknoloji](https://www.heyfinla.com/#teknoloji): Araç kullanan fatura ajanı, GİB onaylı entegratör
+- [Kimler için](https://www.heyfinla.com/#kimler-icin): Serbest çalışanlar, KOBİ sahipleri, e-ticaret esnafı
+- [SSS](https://www.heyfinla.com/#sss): Resmî fatura, e-Fatura/e-Arşiv, KDV, döviz, güvenlik, muhasebeci
+
+## Optional
+
+- [İndir](https://www.heyfinla.com/#indir): App Store ve Google Play (mağaza linkleri yakında)

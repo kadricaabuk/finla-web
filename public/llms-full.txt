@@ -1,0 +1,103 @@
+# finla
+
+> Türkiye'nin sohbetle çalışan ilk e-fatura asistanı.
+
+Bu dosya https://www.heyfinla.com landing içeriğiyle aynıdır. AI agent'lar için tek kaynak özetidir.
+
+## Özet
+
+finla, Türkiye'deki serbest çalışanlar ve KOBİ'ler için yapay zekâ destekli e-fatura asistanıdır. Form yok, menü yok, muhasebe programı ekranı yok. Fatura kesmek, sorgulamak ve paylaşmak için finla'ya yazman yeterli — gerisini yapay zekâ halleder.
+
+Güven sinyalleri: GİB uyumlu e-Fatura & e-Arşiv · GİB onaylı entegratör altyapısı · KVKK uyumlu.
+
+Slogan: Menü yok, yazışalım.
+
+## Nasıl çalışır
+
+Üç adım. İkisini finla yapıyor.
+
+1. Derdini yaz — “Yılmaz İnşaat'a 10.000 TL + KDV fatura kes” — günlük konuştuğun Türkçeyle, tek cümle.
+2. finla anlar ve hazırlar — Yapay zekâ alıcıyı, tutarı ve vergileri çıkarır; KDV, tevkifat ve istisna kodlarını otomatik uygular, onayına sunar.
+3. GİB'e iletilir — Onayladığın fatura, GİB onaylı entegratör üzerinden saniyeler içinde resmîleşir. Durumu sohbetten takip edersin.
+
+Ortalama süre: ~30 saniye — bir cümleden resmî faturaya.
+
+## Özellikler
+
+Muhasebe programı değil. Muhasebe asistanı.
+
+- Sohbetle e-Fatura & e-Arşiv kes: Alıcı, tutar, vergi — hepsini tek cümleden çıkarır, onayınla GİB'e iletir. Fatura tipini (e-Fatura / e-Arşiv) alıcının mükellefiyetine göre kendi seçer.
+- Gelen faturalar tek listede: Entegratörden düşen her fatura anında listelenir; kabul ya da ret yanıtını sohbetten veya listeden tek dokunuşla ver.
+- Vergi zekâsı içeride: KDV oranları, tevkifat ve istisna kodları GİB kod listeleriyle birebir — sen oranı bilmesen de finla bilir.
+- Dövizli fatura, güncel kurla: “500 dolarlık fatura kes” de; finla günün kurunu çeker, TL karşılığını hesaplar, faturaya işler.
+- Raporunu iste, Excel'ini al: “Geçen ayı Excel'e dök” — muhasebecinle paylaşıma hazır .xlsx dosyası, saniyeler içinde elinde.
+- Cevaplar canlı akar: Yanıtlar kelime kelime, gerçek zamanlı gelir. Bekleme çarkı yok; finla düşünürken ne yaptığını görürsün.
+
+## Teknoloji
+
+Bir sohbet balonu değil. Uçtan uca bir fatura ajanı.
+
+Her mesaj, araç kullanan bir yapay zekâ ajanına gider: niyetini çözer, doğru aracı seçer, vergileri hesaplar ve GİB onaylı entegratör üzerinden belgeyi resmîleştirir.
+
+Akış: Sen (tek cümle Türkçe) → finla ajanı (Claude · 13 uzman araç) → Entegratör (GİB onaylı e-belge altyapısı) → GİB (resmî e-Fatura / e-Arşiv).
+
+- 13 uzman araç — fatura kesme, sorgu, gelen kutusu, Excel, kur…
+- %100 GİB veri sözleşmesi — belge, uçtan uca GİB şemasıyla taşınır
+- <1 sn ilk yanıt — cevaplar gerçek zamanlı akışla gelir
+- 7/24 hep açık — fatura kesmek mesai saati tanımaz
+
+Altyapı: gerçek zamanlı akış mimarisi, sunucusuz fonksiyonlar ve uçtan uca korunan GİB veri şeması.
+
+## Güvenlik
+
+Fintech disipliniyle inşa edildi. Faturaların ticari sırrındır. finla, ilk satırından itibaren buna göre yazıldı.
+
+- Şifreli kimlik kasası: Entegratör kimlik bilgilerin, yalnızca sunucuda çözülebilen şifreli bir kasada saklanır. Uygulamaya hiç inmez.
+- Face ID ile uygulama kilidi: Uygulama arka plana geçince kilitlenir; dönüşte Face ID veya biyometrik doğrulama ister.
+- Telefon, SMS kodu, PIN: Şifre ezberi yok. Kaydolurken telefonuna SMS kodu gelir; doğruladıktan sonra bir PIN oluşturursun. Sonraki girişlerde telefonun ve PIN’in yeter.
+- Oturum yalnızca cihazında: Oturum anahtarları cihazının güvenli deposunda tutulur; her istek kısa ömürlü imzalı anahtarlarla taşınır.
+- Loglarda otomatik karartma: PIN, kod ve kimlik alanları sistem kayıtlarına yazılmadan önce otomatik olarak maskelenir.
+- KVKK uyumlu: Verilerin yalnızca hizmeti sunmak için işlenir; üçüncü taraflarla paylaşılmaz.
+
+## Kimler için
+
+Muhasebeci değil. Muhasebecine giden işi azaltan katman.
+
+- Serbest çalışanlar: Ay sonunda tek kalemlik fatura için muhasebe programı açmak istemeyen freelancer'lar. Yaz, kes, işine dön.
+- KOBİ sahipleri: Muhasebecisiyle arasında hızlı, self-servis bir katman isteyen işletmeler. Raporu finla'dan al, Excel'i muhasebeciye gönder.
+- E-ticaret esnafı: Gün içinde tekrarlayan, yüksek hacimli fatura kesen satıcılar. Sipariş bilgisini yapıştır, gerisi otomatik.
+
+## SSS
+
+### finla ile kestiğim faturalar resmî mi?
+Evet. Faturalar GİB onaylı bir e-belge entegratörü üzerinden, GİB'in e-Fatura ve e-Arşiv standartlarına birebir uygun kesilir. Herhangi bir muhasebe programından kesilen faturayla aynı hukuki geçerliliğe sahiptir.
+
+### e-Fatura mı, e-Arşiv mi keseceğimi bilmem gerekiyor mu?
+Hayır. Alıcının e-Fatura mükellefi olup olmadığını finla kontrol eder ve doğru belge tipini kendisi seçer. Sen sadece kime, ne kadar keseceğini yaz.
+
+### KDV, tevkifat, istisna gibi konuları bilmem gerekir mi?
+Gerekmez. finla KDV oranlarını, tevkifat ve istisna kodlarını GİB kod listeleriyle birebir bilir ve faturana otomatik uygular. Yine de göndermeden önce her kalemi onayına sunar.
+
+### Dövizli fatura kesebilir miyim?
+Evet. “500 dolarlık fatura kes” dediğinde finla günün kurunu çeker, TL karşılığını hesaplar ve faturaya işler.
+
+### Verilerim ve GİB şifrelerim güvende mi?
+Entegratör kimlik bilgilerin sunucu tarafında şifreli bir kasada saklanır ve uygulamana hiç inmez. Oturumun yalnızca cihazının güvenli deposunda tutulur; uygulama Face ID ile kilitlenir. Hassas alanlar sistem kayıtlarına dahi yazılmaz.
+
+### Muhasebecimden vazgeçmem mi gerekiyor?
+Hayır — tam tersi. finla, muhasebecine giden günlük işleri (fatura kesme, takip, liste çıkarma) senin üzerinden alır; dönem sonunda tek komutla Excel çıktısını muhasebecinle paylaşırsın.
+
+### Nasıl başlarım?
+Uygulamayı indir, telefon numaranı gir. SMS’le gelen kodu doğrula, ardından sonraki girişlerin için bir PIN oluştur. Mevcut e-fatura hesabını bağladıktan sonra ilk faturanı sohbetten kesebilirsin — hepsi birkaç dakika sürer.
+
+## İndirme
+
+App Store ve Google Play üzerinden indirilebilir (mağaza linkleri yakında). Kredi kartı gerekmez · Telefonunla kaydol, SMS kodunu doğrula.
+
+## Site
+
+- Ana sayfa: https://www.heyfinla.com/
+- Agent index: https://www.heyfinla.com/llms.txt
+- Bu dosya: https://www.heyfinla.com/llms-full.txt
+
+© 2026 finla. Tüm hakları saklıdır.
