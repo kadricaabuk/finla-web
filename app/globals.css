@@ -1,0 +1,113 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+body {
+  @apply bg-white font-sans text-ink antialiased;
+  font-feature-settings: "cv11", "ss01";
+}
+
+::selection {
+  background: #0a0a0a;
+  color: #fff;
+}
+
+.wrap {
+  @apply mx-auto w-full max-w-wrap px-5 sm:px-8 md:px-10;
+}
+
+.eyebrow {
+  @apply text-[11px] font-semibold uppercase tracking-[0.22em] text-faint;
+}
+
+.eyebrow-dark {
+  @apply text-[11px] font-semibold uppercase tracking-[0.22em] text-white/40;
+}
+
+/* Big display headings: SF-like tight tracking */
+.display {
+  @apply font-bold;
+  letter-spacing: -0.035em;
+  line-height: 1.02;
+}
+
+.h2-display {
+  @apply font-bold;
+  letter-spacing: -0.028em;
+  line-height: 1.08;
+}
+
+/* Scroll-reveal system: Reveal.tsx toggles .is-visible */
+.reveal {
+  opacity: 0;
+  transform: translateY(26px);
+  transition:
+    opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  transition-delay: var(--reveal-delay, 0ms);
+}
+.reveal.is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+/* faint dotted grid used behind the hero */
+.bg-grid {
+  background-image: radial-gradient(circle, rgba(10, 10, 10, 0.08) 1px, transparent 1px);
+  background-size: 26px 26px;
+}
+
+.mask-fade-y {
+  -webkit-mask-image: linear-gradient(to bottom, transparent, black 12%, black 82%, transparent);
+  mask-image: linear-gradient(to bottom, transparent, black 12%, black 82%, transparent);
+}
+
+.mask-fade-x {
+  -webkit-mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
+  mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
+}
+
+/* thinking indicator dots */
+.dot-think {
+  animation: bounce3 1.2s ease-in-out infinite;
+}
+.dot-think:nth-child(2) {
+  animation-delay: 0.15s;
+}
+.dot-think:nth-child(3) {
+  animation-delay: 0.3s;
+}
+
+/* FAQ chevron */
+details[open] .faq-icon {
+  transform: rotate(45deg);
+}
+details summary::-webkit-details-marker {
+  display: none;
+}
+
+/* visible keyboard focus */
+a:focus-visible,
+button:focus-visible,
+summary:focus-visible {
+  outline: 2px solid #0a0a0a;
+  outline-offset: 3px;
+  border-radius: 6px;
+}
