@@ -95,6 +95,31 @@ body {
   animation-delay: 0.3s;
 }
 
+/* hero demo: invite opening the side menu after first autoplay scene */
+@keyframes menu-nudge {
+  0%,
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(10, 10, 10, 0);
+    background-color: transparent;
+  }
+  50% {
+    transform: scale(1.12);
+    box-shadow: 0 0 0 4px rgba(10, 10, 10, 0.14);
+    background-color: #f4f4f2;
+  }
+}
+.menu-nudge {
+  animation: menu-nudge 1.15s ease-in-out infinite;
+}
+@media (prefers-reduced-motion: reduce) {
+  .menu-nudge {
+    animation: none !important;
+    box-shadow: 0 0 0 2px rgba(10, 10, 10, 0.35);
+    background-color: #f4f4f2;
+  }
+}
+
 /* FAQ chevron */
 details[open] .faq-icon {
   transform: rotate(45deg);

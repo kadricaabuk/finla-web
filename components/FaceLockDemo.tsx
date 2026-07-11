@@ -8,10 +8,10 @@ const PHASE_MS: Record<Phase, number> = {
   splash: 1200,
   scan: 1800,
   success: 900,
-  chat: 900,
-  focus: 600,
-  suggestions: 2200,
-  hold: 2800,
+  chat: 350,
+  focus: 280,
+  suggestions: 1600,
+  hold: 1000,
 };
 
 const ORDER: Phase[] = [

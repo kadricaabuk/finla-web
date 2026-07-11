@@ -213,31 +213,39 @@ export default function ChatDemo() {
   const [typed, setTyped] = useState("");
   const [phase, setPhase] = useState<Phase>("typing");
   const [playId, setPlayId] = useState(0);
+  const [paused, setPaused] = useState(false);
+  const [nudgeMenu, setNudgeMenu] = useState(false);
+  const introDone = useRef(false);
   const reduced = useRef(false);
 
   useEffect(() => {
     reduced.current = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   }, []);
 
-  // Autoplay only while on chat — pause elsewhere so timers don't race
+  // After the first scene lands on reply, stop looping and nudge the menu button
   useEffect(() => {
-    if (screen !== "chat") return;
+    if (screen !== "chat" || phase !== "reply" || introDone.current) return;
+
+    const timer = setTimeout(() => {
+      introDone.current = true;
+      setPaused(true);
+      setNudgeMenu(true);
+    }, 900);
+
+    return () => clearTimeout(timer);
+  }, [screen, phase, sceneIdx]);
+
+  // Autoplay one scene on chat (no loop — nudge effect owns the handoff)
+  useEffect(() => {
+    if (screen !== "chat" || paused) return;
 
     const scene = SCENES[sceneIdx];
     let timer: ReturnType<typeof setTimeout>;
 
-    const next = () => {
-      setSceneIdx((i) => (i + 1) % SCENES.length);
-      setPhase("typing");
-      setTyped("");
-      setPlayId((p) => p + 1);
-    };
-
     if (reduced.current) {
       setTyped(scene.command);
       setPhase("reply");
-      timer = setTimeout(next, 6000);
-      return () => clearTimeout(timer);
+      return;
     }
 
     if (phase === "typing") {
@@ -252,13 +260,18 @@ export default function ChatDemo() {
       timer = setTimeout(() => setPhase("tool"), 950);
     } else if (phase === "tool") {
       timer = setTimeout(() => setPhase("reply"), 1000);
-    } else {
-      timer = setTimeout(next, 4300);
     }
     return () => clearTimeout(timer);
-  }, [screen, typed, phase, sceneIdx, playId]);
+  }, [screen, typed, phase, sceneIdx, playId, paused]);
+
+  function pauseAutoplay() {
+    introDone.current = true;
+    setPaused(true);
+    setNudgeMenu(false);
+  }
 
   function jumpTo(i: number) {
+    pauseAutoplay();
     setSceneIdx(i);
     setTyped("");
     setPhase("typing");
@@ -266,12 +279,14 @@ export default function ChatDemo() {
   }
 
   function navigate(next: Screen) {
+    pauseAutoplay();
     setScreen(next);
     setMenuOpen(false);
     setExpandedId(null);
   }
 
   function openChatScene(idx: number) {
+    pauseAutoplay();
     setScreen("chat");
     setMenuOpen(false);
     setExpandedId(null);
@@ -332,8 +347,13 @@ export default function ChatDemo() {
               type="button"
               aria-label="Menüyü aç"
               aria-expanded={menuOpen}
-              onClick={() => setMenuOpen(true)}
-              className="flex h-8 w-8 items-center justify-center rounded-lg hover:bg-surface"
+              onClick={() => {
+                pauseAutoplay();
+                setMenuOpen(true);
+              }}
+              className={`flex h-8 w-8 items-center justify-center rounded-lg hover:bg-surface ${
+                nudgeMenu ? "menu-nudge" : ""
+              }`}
             >
               <span aria-hidden className="space-y-[3px]">
                 <span className="block h-[2px] w-4 rounded bg-ink" />
@@ -463,8 +483,10 @@ export default function ChatDemo() {
                           type="button"
                           aria-pressed={active}
                           onClick={() => jumpTo(i)}
-                          className={`shrink-0 rounded-full px-3 py-1.5 text-[11.5px] font-semibold tracking-tight transition-colors ${
-                            active ? "bg-ink text-white" : "bg-surface text-muted hover:text-ink"
+                          className={`shrink-0 rounded-full border px-3 py-1.5 text-[11.5px] font-semibold tracking-tight transition-colors ${
+                            active
+                              ? "border-ink bg-ink text-white"
+                              : "border-line bg-white text-muted hover:border-ink/35 hover:text-ink"
                           }`}
                         >
                           {s.chip}
@@ -472,7 +494,13 @@ export default function ChatDemo() {
                       );
                     })}
                   </div>
-                  <div className="flex items-center gap-2 rounded-full bg-surface px-4 py-2.5 text-[13px] text-faint">
+                  <button
+                    type="button"
+                    title="Demo — aşağıdaki senaryolardan seç"
+                    aria-label="Demo — senaryolardan birini seç"
+                    onClick={pauseAutoplay}
+                    className="flex w-full cursor-default items-center gap-2 rounded-full bg-surface px-4 py-2.5 text-left text-[13px] text-faint"
+                  >
                     finla&apos;ya yaz
                     <span className="ml-auto flex h-7 w-7 items-center justify-center rounded-full bg-ink text-white">
                       <svg width="12" height="12" viewBox="0 0 24 24" fill="none" aria-hidden>
@@ -485,7 +513,7 @@ export default function ChatDemo() {
                         />
                       </svg>
                     </span>
-                  </div>
+                  </button>
                 </div>
               </div>
             )}
