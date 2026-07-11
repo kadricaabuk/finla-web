@@ -27,11 +27,9 @@ export default function Hero() {
 
           <Reveal delay={90}>
             <h1 className="display mt-7 text-[44px] sm:text-6xl lg:text-7xl xl:text-[84px]">
-              Yaz.
+              Menü yok,
               <br />
-              Faturan
-              <br />
-              GİB&apos;de.
+              yazışalım.
             </h1>
           </Reveal>
 

@@ -36,7 +36,7 @@ export default function Features() {
         <Reveal>
           <p className="eyebrow mb-4">Özellikler</p>
           <h2 className="h2-display max-w-2xl text-4xl sm:text-5xl">
-            Bir muhasebe programının yaptığı her şey. Ekranları hariç.
+            Muhasebe programı değil. Muhasebe asistanı.
           </h2>
         </Reveal>
 
@@ -93,13 +93,17 @@ export default function Features() {
               title="Dövizli fatura, güncel kurla"
               desc="“500 dolarlık fatura kes” de; finla günün kurunu çeker, TL karşılığını hesaplar, faturaya işler."
             />
-            <div className="mt-auto flex items-center gap-3 px-7 pb-7 text-sm font-semibold tabular-nums">
-              <span className="rounded-xl border border-line bg-paper px-3.5 py-2">$500</span>
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden className="text-faint">
+            <div className="mt-auto flex flex-wrap items-center gap-2 px-7 pb-7 text-sm font-semibold tabular-nums">
+              <span className="shrink-0 whitespace-nowrap rounded-xl border border-line bg-paper px-3.5 py-2">
+                $500
+              </span>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden className="shrink-0 text-faint">
                 <path d="M5 12h14m0 0l-5-5m5 5l-5 5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
               </svg>
-              <span className="rounded-xl border border-line bg-paper px-3.5 py-2">20.410,00 ₺</span>
-              <span className="ml-auto rounded-full bg-surface px-2.5 py-1 text-[10.5px] font-medium text-muted text-center">
+              <span className="shrink-0 whitespace-nowrap rounded-xl border border-line bg-paper px-3.5 py-2">
+                20.410,00 ₺
+              </span>
+              <span className="whitespace-nowrap rounded-full bg-surface px-2.5 py-1 text-[10.5px] font-medium text-muted">
                 güncel kur
               </span>
             </div>
