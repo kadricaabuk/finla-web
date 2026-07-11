@@ -73,7 +73,7 @@ export default function Footer() {
               </p>
             </div>
 
-            <div className="grid grid-cols-2 gap-10 text-sm sm:grid-cols-3 sm:gap-16">
+            <div className="grid grid-cols-2 gap-10 text-sm sm:gap-16">
               <div>
                 <p className="mb-3 font-semibold text-white/85">Ürün</p>
                 <ul className="space-y-2.5 text-white/45">
@@ -88,16 +88,6 @@ export default function Footer() {
                 <ul className="space-y-2.5 text-white/45">
                   <li><a href="#teknoloji" className="transition-colors hover:text-white">Teknoloji</a></li>
                   <li><a href="#kimler-icin" className="transition-colors hover:text-white">Kimler için</a></li>
-                </ul>
-              </div>
-              <div>
-                <p className="mb-3 font-semibold text-white/85">Yatırımcı & Partner</p>
-                <ul className="space-y-2.5 text-white/45">
-                  <li>
-                    <a href="https://www.heyfinla.com" className="transition-colors hover:text-white">
-                      www.heyfinla.com
-                    </a>
-                  </li>
                 </ul>
               </div>
             </div>
