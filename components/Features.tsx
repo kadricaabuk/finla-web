@@ -1,4 +1,4 @@
-import Image from "next/image";
+import InboxDemo from "./InboxDemo";
 import Reveal from "./Reveal";
 
 function Cell({
@@ -60,20 +60,16 @@ export default function Features() {
             </div>
           </Cell>
 
-          {/* B — gelen kutusu (uzun, telefon görseli) */}
+          {/* B — gelen kutusu (uzun, animasyonlu telefon) */}
           <Cell className="lg:row-span-2" delay={120}>
             <CellText
               title="Gelen faturalar tek listede"
               desc="Entegratörden düşen her fatura anında listelenir; kabul ya da ret yanıtını sohbetten veya listeden tek dokunuşla ver."
             />
-            <div className="relative mt-auto h-64 overflow-hidden px-7 sm:h-72 lg:h-auto lg:flex-1">
-              <Image
-                src="/mockups/gelen-faturalar.png"
-                alt="finla uygulamasında gelen faturalar listesi: durum rozetleri, KDV ve matrah detayları"
-                width={512}
-                height={1032}
-                className="mx-auto w-full max-w-[280px] rounded-t-[2rem] border border-b-0 border-line shadow-[0_20px_50px_-20px_rgba(10,10,10,0.3)] transition-transform duration-500 group-hover:-translate-y-2"
-              />
+            <div className="relative mt-auto h-64 overflow-hidden px-7 sm:h-72 lg:h-auto lg:flex-1 lg:pt-2">
+              <div className="transition-transform duration-500 group-hover:-translate-y-2">
+                <InboxDemo />
+              </div>
             </div>
           </Cell>
 
@@ -103,7 +99,7 @@ export default function Features() {
                 <path d="M5 12h14m0 0l-5-5m5 5l-5 5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
               </svg>
               <span className="rounded-xl border border-line bg-paper px-3.5 py-2">20.410,00 ₺</span>
-              <span className="ml-auto rounded-full bg-surface px-2.5 py-1 text-[10.5px] font-medium text-muted">
+              <span className="ml-auto rounded-full bg-surface px-2.5 py-1 text-[10.5px] font-medium text-muted text-center">
                 güncel kur
               </span>
             </div>

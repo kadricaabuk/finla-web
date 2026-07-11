@@ -1,4 +1,4 @@
-import Image from "next/image";
+import FaceLockDemo from "./FaceLockDemo";
 import Reveal from "./Reveal";
 
 const ITEMS = [
@@ -32,15 +32,8 @@ export default function Security() {
   return (
     <section className="bg-paper py-20 md:py-28" id="guvenlik">
       <div className="wrap grid items-center gap-14 lg:grid-cols-[0.9fr_1.1fr]">
-        <Reveal className="order-2 mx-auto lg:order-1">
-          <Image
-            src="/mockups/IMG_8106_black.png"
-            alt="finla giriş ekranı: telefon numarası ve 6 haneli PIN alanları"
-            width={920}
-            height={1884}
-            sizes="(max-width: 1024px) 70vw, 30vw"
-            className="h-auto w-[260px] drop-shadow-[0_35px_60px_rgba(10,10,10,0.3)] sm:w-[300px]"
-          />
+        <Reveal className="order-2 mx-auto w-[280px] shrink-0 lg:order-1">
+          <FaceLockDemo />
         </Reveal>
 
         <div className="order-1 lg:order-2">
