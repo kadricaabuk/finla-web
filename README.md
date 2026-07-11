@@ -24,7 +24,6 @@ npm run start
 ```
 
 ## Yapı
-
 ```
 app/
   layout.tsx        # metadata (heyfinla.com), fontlar (Space Grotesk + Inter)
