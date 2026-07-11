@@ -21,7 +21,7 @@ export default function Hero() {
                 <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-green-bright opacity-60" />
                 <span className="relative inline-flex h-2 w-2 rounded-full bg-green-bright" />
               </span>
-              Türkiye&apos;nin sohbetle çalışan e-fatura asistanı
+              Türkiye&apos;nin sohbetle çalışan ilk e-fatura asistanı
             </p>
           </Reveal>
 
