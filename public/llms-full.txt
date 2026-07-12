@@ -99,11 +99,11 @@ Integrator credentials are stored in a server-side encrypted vault and never dow
 No—the opposite. finla takes daily work off your plate (issuing, tracking, exporting lists); at period end you share an Excel export with your accountant in one command.
 
 ### How do I get started?
-Download the app, enter your phone number. Verify the SMS code, then set a PIN for later logins. Connect your existing e-invoice account and issue your first invoice from chat—usually a few minutes.
+finla is currently in early access. Fill in the early-access form—invites are sent in signup order. When your invite arrives, download the app, verify your phone number via SMS, and set a PIN. Connect your existing e-invoice account and issue your first invoice from chat—usually a few minutes.
 
-## Download
+## Early access
 
-Available on the App Store and Google Play (store links coming soon). No credit card required · Sign up with your phone, verify the SMS code.
+finla is in early access (test mode). Join via the form: https://forms.gle/5Kb6FWxL7x1aBjx3A — invites are sent in signup order. No credit card required. App Store and Google Play links will be added at public launch.
 
 ## Site
 

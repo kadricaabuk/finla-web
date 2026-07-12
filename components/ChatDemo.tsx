@@ -270,8 +270,10 @@ export default function ChatDemo() {
     setNudgeMenu(false);
   }
 
-  function jumpTo(i: number) {
-    pauseAutoplay();
+  function playScene(i: number) {
+    introDone.current = true;
+    setNudgeMenu(false);
+    setPaused(false);
     setSceneIdx(i);
     setTyped("");
     setPhase("typing");
@@ -286,14 +288,10 @@ export default function ChatDemo() {
   }
 
   function openChatScene(idx: number) {
-    pauseAutoplay();
     setScreen("chat");
     setMenuOpen(false);
     setExpandedId(null);
-    setSceneIdx(idx);
-    setTyped("");
-    setPhase("typing");
-    setPlayId((p) => p + 1);
+    playScene(idx);
   }
 
   function toggleExpand(id: string) {
@@ -482,7 +480,7 @@ export default function ChatDemo() {
                           key={s.chip}
                           type="button"
                           aria-pressed={active}
-                          onClick={() => jumpTo(i)}
+                          onClick={() => playScene(i)}
                           className={`shrink-0 rounded-full border px-3 py-1.5 text-[11.5px] font-semibold tracking-tight transition-colors ${
                             active
                               ? "border-ink bg-ink text-white"

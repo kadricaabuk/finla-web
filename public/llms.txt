@@ -20,4 +20,4 @@ finla lets you issue GİB-compliant e-Fatura / e-Arşiv invoices in natural Turk
 
 ## Optional
 
-- [Download](https://www.heyfinla.com/#indir): App Store and Google Play (store links coming soon)
+- [Early access](https://forms.gle/5Kb6FWxL7x1aBjx3A): finla is currently in early access (test mode). Join via the form; invites are sent in signup order. App Store and Google Play links will be added at public launch.

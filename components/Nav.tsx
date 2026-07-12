@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { useEffect, useState } from "react";
+import { EARLY_ACCESS_FORM_URL } from "../content/site";
 
 const LINKS = [
   { href: "#ozellikler", label: "Özellikler" },
@@ -56,10 +57,12 @@ export default function Nav() {
 
         <div className="flex items-center gap-3">
           <a
-            href="#indir"
+            href={EARLY_ACCESS_FORM_URL}
+            target="_blank"
+            rel="noopener noreferrer"
             className="hidden rounded-full bg-ink px-5 py-2.5 text-sm font-semibold text-white transition-transform hover:scale-[1.03] active:scale-[0.98] sm:inline-block"
           >
-            Uygulamayı indir
+            Erken erişime katıl
           </a>
           <button
             type="button"
@@ -102,11 +105,13 @@ export default function Nav() {
             </a>
           ))}
           <a
-            href="#indir"
+            href={EARLY_ACCESS_FORM_URL}
+            target="_blank"
+            rel="noopener noreferrer"
             onClick={() => setOpen(false)}
             className="mt-2 rounded-full bg-ink px-5 py-3.5 text-center text-sm font-semibold text-white"
           >
-            Uygulamayı indir
+            Erken erişime katıl
           </a>
         </nav>
       </div>

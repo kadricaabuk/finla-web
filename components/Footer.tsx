@@ -1,4 +1,5 @@
 import Reveal from "./Reveal";
+import { EARLY_ACCESS_FORM_URL } from "../content/site";
 
 export default function Footer() {
   return (
@@ -17,46 +18,34 @@ export default function Footer() {
               <span className="text-white/40">form doldurarak</span> kestin.
             </h2>
             <p className="mx-auto mt-7 max-w-md text-lg text-white/60">
-              Bir sonrakini finla&apos;ya yaz. İki dakikada kaydol, ilk faturanı
-              sohbetten kes.
+              Bir sonrakini finla&apos;ya yaz. Erken erişim listesine katıl,
+              davetin geldiğinde ilk faturanı sohbetten kes.
             </p>
           </Reveal>
           <Reveal delay={150}>
             <div className="mt-10 flex flex-wrap items-center justify-center gap-3">
               <a
-                href="#"
+                href={EARLY_ACCESS_FORM_URL}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="flex items-center gap-3 rounded-full bg-white px-7 py-4 text-ink transition-transform hover:scale-[1.03] active:scale-[0.98]"
               >
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden>
-                  <path d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.4 1.8-3.12 1.87-2.38 5.98.48 7.13-.57 1.5-1.31 2.99-2.53 4.08zM12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z" />
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden>
+                  <path
+                    d="M21 11.5a8.5 8.5 0 01-8.5 8.5c-1.19 0-2.32-.24-3.35-.69L3 21l1.69-6.15A8.5 8.5 0 1121 11.5z"
+                    stroke="currentColor"
+                    strokeWidth="1.8"
+                    strokeLinejoin="round"
+                  />
+                  <circle cx="8.6" cy="11.5" r="1" fill="currentColor" />
+                  <circle cx="12.5" cy="11.5" r="1" fill="currentColor" />
+                  <circle cx="16.4" cy="11.5" r="1" fill="currentColor" />
                 </svg>
-                <span className="text-left leading-tight">
-                  <span className="block text-[10px] font-medium uppercase tracking-wide text-ink/50">
-                    İndir
-                  </span>
-                  <span className="block text-sm font-bold">App Store</span>
-                </span>
-              </a>
-              <a
-                href="#"
-                className="flex items-center gap-3 rounded-full border border-white/25 px-7 py-4 transition-colors hover:border-white/60"
-              >
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden>
-                  <path d="M3.6 1.8c-.35.37-.55.94-.55 1.68v17.07c0 .74.2 1.31.56 1.67l.09.08L13.24 12.7v-.21L3.7 1.72l-.1.08z" />
-                  <path d="M16.4 15.88l-3.16-3.18v-.21l3.17-3.18.07.04 3.76 2.14c1.07.6 1.07 1.6 0 2.21l-3.76 2.14-.08.04z" />
-                  <path d="M16.48 15.84L13.24 12.6 3.6 22.3c.36.38.94.42 1.6.05l11.28-6.5" />
-                  <path d="M16.48 9.35L5.2 2.87c-.66-.38-1.24-.33-1.6.04l9.64 9.68 3.24-3.24z" />
-                </svg>
-                <span className="text-left leading-tight">
-                  <span className="block text-[10px] font-medium uppercase tracking-wide text-white/50">
-                    İndir
-                  </span>
-                  <span className="block text-sm font-bold">Google Play</span>
-                </span>
+                <span className="text-sm font-bold sm:text-base">Erken erişime katıl</span>
               </a>
             </div>
             <p className="mt-8 text-sm text-white/40">
-              Kredi kartı gerekmez · Telefonunla kaydol, SMS kodunu doğrula
+              Kredi kartı gerekmez · Davetler kayıt sırasına göre gönderiliyor
             </p>
           </Reveal>
         </div>
