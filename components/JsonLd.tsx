@@ -1,4 +1,4 @@
-import { FAQS, SITE, SITE_URL } from "@/content/site";
+import { CONTACT_EMAIL, FAQS, SITE, SITE_URL } from "@/content/site";
 
 export default function JsonLd() {
   const organization = {
@@ -7,6 +7,13 @@ export default function JsonLd() {
     name: SITE.name,
     url: SITE_URL,
     description: SITE.description,
+    email: CONTACT_EMAIL,
+    contactPoint: {
+      "@type": "ContactPoint",
+      email: CONTACT_EMAIL,
+      contactType: "customer support",
+      availableLanguage: ["Turkish"],
+    },
   };
 
   const website = {

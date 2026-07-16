@@ -105,6 +105,10 @@ finla is currently in early access. Fill in the early-access form—invites are 
 
 finla is in early access (test mode). Join via the form: https://forms.gle/5Kb6FWxL7x1aBjx3A — invites are sent in signup order. No credit card required. App Store and Google Play links will be added at public launch.
 
+## Contact
+
+General contact and support: hello@heyfinla.com
+
 ## Site
 
 - Homepage: https://www.heyfinla.com/

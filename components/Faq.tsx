@@ -1,4 +1,4 @@
-import { FAQS } from "@/content/site";
+import { CONTACT_EMAIL, FAQS } from "@/content/site";
 import Reveal from "./Reveal";
 
 export default function Faq() {
@@ -10,6 +10,16 @@ export default function Faq() {
           <h2 className="h2-display text-4xl sm:text-5xl">
             Aklındaki soruların cevabı muhtemelen burada.
           </h2>
+          <p className="mt-6 text-muted">
+            Cevabını bulamadın mı?{" "}
+            <a
+              href={`mailto:${CONTACT_EMAIL}`}
+              className="font-semibold text-ink underline decoration-line underline-offset-4 transition-colors hover:decoration-ink"
+            >
+              {CONTACT_EMAIL}
+            </a>{" "}
+            adresine yaz, dönelim.
+          </p>
         </Reveal>
 
         <div>

@@ -145,8 +145,10 @@ export default function Features() {
             <div className="mt-auto space-y-2 px-7 pb-7" aria-hidden>
               <span className="block h-2 w-4/5 animate-pulse-soft rounded bg-ink/15" />
               <span className="block h-2 w-full animate-pulse-soft rounded bg-ink/10 [animation-delay:200ms]" />
-              <span className="block h-2 w-2/3 animate-pulse-soft rounded bg-ink/15 [animation-delay:400ms]" />
-              <span className="mt-1 inline-block h-3.5 w-[2px] animate-blink bg-ink" />
+              <span className="flex items-center gap-1.5">
+                <span className="block h-2 w-2/3 animate-pulse-soft rounded bg-ink/15 [animation-delay:400ms]" />
+                <span className="h-3.5 w-[2px] animate-blink bg-ink" />
+              </span>
             </div>
           </Cell>
         </div>

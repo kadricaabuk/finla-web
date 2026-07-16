@@ -5,6 +5,9 @@ export const SITE_URL = "https://www.heyfinla.com";
 /** Erken erişim başvuru formu — mağaza linkleri lansmanla birlikte gelecek. */
 export const EARLY_ACCESS_FORM_URL = "https://forms.gle/5Kb6FWxL7x1aBjx3A";
 
+/** Genel iletişim adresi. */
+export const CONTACT_EMAIL = "hello@heyfinla.com";
+
 export const SITE = {
   name: "finla",
   tagline: "Türkiye'nin sohbetle çalışan ilk e-fatura asistanı",

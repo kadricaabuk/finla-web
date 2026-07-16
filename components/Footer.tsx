@@ -1,5 +1,5 @@
 import Reveal from "./Reveal";
-import { EARLY_ACCESS_FORM_URL } from "../content/site";
+import { CONTACT_EMAIL, EARLY_ACCESS_FORM_URL } from "../content/site";
 
 export default function Footer() {
   return (
@@ -60,6 +60,12 @@ export default function Footer() {
                 Türkiye&apos;deki serbest çalışanlar ve KOBİ&apos;ler için yapay zekâ
                 destekli e-fatura asistanı.
               </p>
+              <a
+                href={`mailto:${CONTACT_EMAIL}`}
+                className="mt-4 inline-block text-sm text-white/45 underline decoration-white/20 underline-offset-4 transition-colors hover:text-white hover:decoration-white/60"
+              >
+                {CONTACT_EMAIL}
+              </a>
             </div>
 
             <div className="grid grid-cols-2 gap-10 text-sm sm:gap-16">
@@ -77,6 +83,7 @@ export default function Footer() {
                 <ul className="space-y-2.5 text-white/45">
                   <li><a href="#teknoloji" className="transition-colors hover:text-white">Teknoloji</a></li>
                   <li><a href="#kimler-icin" className="transition-colors hover:text-white">Kimler için</a></li>
+                  <li><a href={`mailto:${CONTACT_EMAIL}`} className="transition-colors hover:text-white">İletişim</a></li>
                 </ul>
               </div>
             </div>
