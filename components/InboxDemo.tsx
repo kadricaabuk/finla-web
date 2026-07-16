@@ -78,14 +78,14 @@ const STATUS_CLASS: Record<Status, string> = {
 };
 
 const PHASE_MS: Record<Phase, number> = {
-  loading: 1400,
-  list: 1200,
-  expand: 1800,
-  tap: 550,
-  preview: 2200,
-  approve: 700,
-  closing: 650,
-  approved: 3200,
+  loading: 700,
+  list: 600,
+  expand: 900,
+  tap: 320,
+  preview: 1100,
+  approve: 400,
+  closing: 380,
+  approved: 1600,
 };
 
 function Badge({ status, pulse }: { status: Status; pulse?: boolean }) {

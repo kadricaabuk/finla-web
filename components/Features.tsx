@@ -1,4 +1,6 @@
 import InboxDemo from "./InboxDemo";
+import InvoiceChatDemo from "./InvoiceChatDemo";
+import FxCountDemo from "./FxCountDemo";
 import Reveal from "./Reveal";
 
 function Cell({
@@ -43,21 +45,7 @@ export default function Features() {
         <div className="mt-14 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {/* A — chat ile fatura kes (geniş) */}
           <Cell className="sm:col-span-2" delay={0}>
-            <CellText
-              title="Sohbetle e-Fatura & e-Arşiv kes"
-              desc="Alıcı, tutar, vergi — hepsini tek cümleden çıkarır, onayınla GİB'e iletir. Fatura tipini (e-Fatura / e-Arşiv) alıcının mükellefiyetine göre kendi seçer."
-            />
-            <div className="relative mt-auto flex flex-col gap-2.5 px-7 pb-7">
-              <div className="ml-auto max-w-[85%] rounded-2xl rounded-br-md bg-ink px-4 py-2.5 text-[13px] text-white">
-                Acme Ltd&apos;ye 25.000 TL + KDV danışmanlık faturası kes
-              </div>
-              <div className="mr-auto flex w-full max-w-[75%] items-center justify-between rounded-2xl rounded-bl-md border border-line bg-paper px-4 py-3 text-[13px]">
-                <span className="font-semibold">e-Fatura · 30.000,00 ₺</span>
-                <span className="rounded-full bg-green-soft px-2.5 py-0.5 text-[11px] font-semibold text-green-dark">
-                  GİB&apos;e iletildi
-                </span>
-              </div>
-            </div>
+            <InvoiceChatDemo />
           </Cell>
 
           {/* B — gelen kutusu (uzun, animasyonlu telefon) */}
@@ -89,24 +77,7 @@ export default function Features() {
 
           {/* D — dövizli fatura */}
           <Cell delay={120}>
-            <CellText
-              title="Dövizli fatura, güncel kurla"
-              desc="“500 dolarlık fatura kes” de; finla günün kurunu çeker, TL karşılığını hesaplar, faturaya işler."
-            />
-            <div className="mt-auto flex flex-wrap items-center gap-2 px-7 pb-7 text-sm font-semibold tabular-nums">
-              <span className="shrink-0 whitespace-nowrap rounded-xl border border-line bg-paper px-3.5 py-2">
-                $500
-              </span>
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden className="shrink-0 text-faint">
-                <path d="M5 12h14m0 0l-5-5m5 5l-5 5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-              </svg>
-              <span className="shrink-0 whitespace-nowrap rounded-xl border border-line bg-paper px-3.5 py-2">
-                20.410,00 ₺
-              </span>
-              <span className="whitespace-nowrap rounded-full bg-surface px-2.5 py-1 text-[10.5px] font-medium text-muted">
-                güncel kur
-              </span>
-            </div>
+            <FxCountDemo />
           </Cell>
 
           {/* E — rapor & excel */}

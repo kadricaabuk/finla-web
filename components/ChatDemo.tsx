@@ -31,7 +31,7 @@ const SCENES: Scene[] = [
   {
     chip: "Fatura kes",
     command: "Yılmaz İnşaat'a 10.000 TL + KDV fatura kes",
-    tool: "create_invoice",
+    tool: "fatura_olustur",
     reply: {
       title: "e-Arşiv Fatura oluşturuldu",
       rows: [
@@ -47,7 +47,7 @@ const SCENES: Scene[] = [
   {
     chip: "Bu ayı göster",
     command: "Bu ay kestiğim faturaları göster",
-    tool: "invoice_totals",
+    tool: "fatura_toplamlari",
     reply: {
       title: "Temmuz 2026 — Giden Faturalar",
       rows: [
@@ -63,7 +63,7 @@ const SCENES: Scene[] = [
   {
     chip: "Kabul et",
     command: "Gelen son faturayı kabul et",
-    tool: "invoice_inbox_action",
+    tool: "fatura_kabul_et",
     reply: {
       title: "Gelen fatura yanıtlandı",
       rows: [
@@ -79,7 +79,7 @@ const SCENES: Scene[] = [
   {
     chip: "Excel'e dök",
     command: "Geçen ayın faturalarını Excel'e dök",
-    tool: "excel_export",
+    tool: "excel_dok",
     reply: {
       title: "haziran-faturalar.xlsx",
       rows: [
