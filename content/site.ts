@@ -1,5 +1,4 @@
 /** Landing ile senkron tutulacak makine-okunur site içeriği. */
-
 export const SITE_URL = "https://www.heyfinla.com";
 
 /** Erken erişim başvuru formu — mağaza linkleri lansmanla birlikte gelecek. */
@@ -50,6 +49,6 @@ export const FAQS = [
   },
   {
     q: "Nasıl başlarım?",
-    a: "finla şu anda erken erişimde. Erken erişim formunu doldurman yeterli — davetler kayıt sırasına göre gönderiliyor. Davetin geldiğinde uygulamayı indir, telefon numaranı SMS’le doğrula ve bir PIN oluştur. Mevcut e-fatura hesabını bağladıktan sonra ilk faturanı sohbetten kesebilirsin — hepsi birkaç dakika sürer.",
+    a: "finla şu anda erken erişimde. Erken erişim formunu doldurman yeterli, davetler kayıt sırasına göre gönderiliyor. Davetin geldiğinde uygulamayı indir, telefon numaranı SMS’le doğrula ve bir PIN oluştur. Mevcut e-fatura hesabını bağladıktan sonra ilk faturanı sohbetten kesebilirsin — hepsi birkaç dakika sürer.",
   },
 ] as const;
