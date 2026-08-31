@@ -18,7 +18,7 @@ type Screen = "chat" | "outbox" | "inbox" | "profile";
 type Scene = {
   chip: string;
   command: string;
-  tool: string;
+  tools: string[];
   reply: {
     title: string;
     rows: [string, string][];
@@ -31,7 +31,7 @@ const SCENES: Scene[] = [
   {
     chip: "Fatura kes",
     command: "Yılmaz İnşaat'a 10.000 TL + KDV fatura kes",
-    tool: "fatura_olustur",
+    tools: ["musteri_bul", "urun_bul", "vergi_kontrol", "fatura_olustur"],
     reply: {
       title: "e-Arşiv Fatura oluşturuldu",
       rows: [
@@ -47,7 +47,7 @@ const SCENES: Scene[] = [
   {
     chip: "Bu ayı göster",
     command: "Bu ay kestiğim faturaları göster",
-    tool: "fatura_toplamlari",
+    tools: ["donem_belirle", "faturalari_getir", "ozet_olustur"],
     reply: {
       title: "Temmuz 2026 — Giden Faturalar",
       rows: [
@@ -63,7 +63,7 @@ const SCENES: Scene[] = [
   {
     chip: "Kabul et",
     command: "Gelen son faturayı kabul et",
-    tool: "fatura_kabul_et",
+    tools: ["gelen_kutusu_tara", "fatura_dogrula", "yanit_gonder"],
     reply: {
       title: "Gelen fatura yanıtlandı",
       rows: [
@@ -79,7 +79,7 @@ const SCENES: Scene[] = [
   {
     chip: "Excel'e dök",
     command: "Geçen ayın faturalarını Excel'e dök",
-    tool: "excel_dok",
+    tools: ["donem_filtrele", "veri_hazirla", "excel_olustur"],
     reply: {
       title: "haziran-faturalar.xlsx",
       rows: [
@@ -212,6 +212,7 @@ export default function ChatDemo() {
   const [sceneIdx, setSceneIdx] = useState(0);
   const [typed, setTyped] = useState("");
   const [phase, setPhase] = useState<Phase>("typing");
+  const [toolIdx, setToolIdx] = useState(0);
   const [playId, setPlayId] = useState(0);
   const [paused, setPaused] = useState(false);
   const [nudgeMenu, setNudgeMenu] = useState(false);
@@ -257,12 +258,19 @@ export default function ChatDemo() {
     } else if (phase === "sent") {
       timer = setTimeout(() => setPhase("thinking"), 420);
     } else if (phase === "thinking") {
-      timer = setTimeout(() => setPhase("tool"), 950);
+      timer = setTimeout(() => {
+        setToolIdx(0);
+        setPhase("tool");
+      }, 950);
     } else if (phase === "tool") {
-      timer = setTimeout(() => setPhase("reply"), 1000);
+      if (toolIdx < scene.tools.length - 1) {
+        timer = setTimeout(() => setToolIdx((i) => i + 1), 480);
+      } else {
+        timer = setTimeout(() => setPhase("reply"), 550);
+      }
     }
     return () => clearTimeout(timer);
-  }, [screen, typed, phase, sceneIdx, playId, paused]);
+  }, [screen, typed, phase, sceneIdx, playId, paused, toolIdx, SCENES[sceneIdx].tools.length]);
 
   function pauseAutoplay() {
     introDone.current = true;
@@ -277,6 +285,7 @@ export default function ChatDemo() {
     setSceneIdx(i);
     setTyped("");
     setPhase("typing");
+    setToolIdx(0);
     setPlayId((p) => p + 1);
   }
 
@@ -410,7 +419,10 @@ export default function ChatDemo() {
 
                   {(phase === "tool" || phase === "reply") && (
                     <div className="flex justify-start">
-                      <div className="flex animate-pop items-center gap-2 rounded-full border border-line bg-white px-3.5 py-2 font-mono text-[11px] text-muted">
+                      <div
+                        key={phase === "reply" ? scene.tools.length - 1 : toolIdx}
+                        className="flex animate-pop items-center gap-2 rounded-full border border-line bg-white px-3.5 py-2 font-mono text-[11px] text-muted"
+                      >
                         {phase === "tool" ? (
                           <span
                             aria-hidden
@@ -428,7 +440,7 @@ export default function ChatDemo() {
                             />
                           </svg>
                         )}
-                        {scene.tool}
+                        {phase === "reply" ? scene.tools[scene.tools.length - 1] : scene.tools[toolIdx]}
                       </div>
                     </div>
                   )}
