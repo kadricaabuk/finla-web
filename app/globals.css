@@ -98,8 +98,8 @@ body {
   animation-delay: 0.3s;
 }
 
-/* hero demo: invite opening the side menu after first autoplay scene */
-@keyframes menu-nudge {
+/* hero demo: invite trying another scenario chip once the auto-tour ends */
+@keyframes nudge-pulse {
   0%,
   100% {
     transform: scale(1);
@@ -112,11 +112,11 @@ body {
     background-color: #f4f4f2;
   }
 }
-.menu-nudge {
-  animation: menu-nudge 1.15s ease-in-out infinite;
+.nudge-pulse {
+  animation: nudge-pulse 1.15s ease-in-out infinite;
 }
 @media (prefers-reduced-motion: reduce) {
-  .menu-nudge {
+  .nudge-pulse {
     animation: none !important;
     box-shadow: 0 0 0 2px rgba(10, 10, 10, 0.35);
     background-color: #f4f4f2;

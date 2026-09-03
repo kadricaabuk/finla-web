@@ -215,7 +215,7 @@ export default function ChatDemo() {
   const [toolIdx, setToolIdx] = useState(0);
   const [playId, setPlayId] = useState(0);
   const [paused, setPaused] = useState(false);
-  const [nudgeMenu, setNudgeMenu] = useState(false);
+  const [nudgeChips, setNudgeChips] = useState(false);
   const introDone = useRef(false);
   const reduced = useRef(false);
 
@@ -223,15 +223,34 @@ export default function ChatDemo() {
     reduced.current = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   }, []);
 
-  // After the first scene lands on reply, stop looping and nudge the menu button
+  // Auto-tour: walk through every scenario once so passive visitors see the
+  // product's range without needing to touch anything. After each reply
+  // lands, advance to the next scene; after the last one, stop and nudge the
+  // scenario chip row so anyone can jump back into a specific example.
   useEffect(() => {
     if (screen !== "chat" || phase !== "reply" || introDone.current) return;
 
-    const timer = setTimeout(() => {
+    if (reduced.current) {
       introDone.current = true;
       setPaused(true);
-      setNudgeMenu(true);
-    }, 900);
+      setNudgeChips(true);
+      return;
+    }
+
+    const isLastScene = sceneIdx === SCENES.length - 1;
+    const timer = setTimeout(() => {
+      if (isLastScene) {
+        introDone.current = true;
+        setPaused(true);
+        setNudgeChips(true);
+      } else {
+        setSceneIdx((i) => i + 1);
+        setTyped("");
+        setPhase("typing");
+        setToolIdx(0);
+        setPlayId((p) => p + 1);
+      }
+    }, isLastScene ? 900 : 2200);
 
     return () => clearTimeout(timer);
   }, [screen, phase, sceneIdx]);
@@ -275,12 +294,12 @@ export default function ChatDemo() {
   function pauseAutoplay() {
     introDone.current = true;
     setPaused(true);
-    setNudgeMenu(false);
+    setNudgeChips(false);
   }
 
   function playScene(i: number) {
     introDone.current = true;
-    setNudgeMenu(false);
+    setNudgeChips(false);
     setPaused(false);
     setSceneIdx(i);
     setTyped("");
@@ -358,9 +377,7 @@ export default function ChatDemo() {
                 pauseAutoplay();
                 setMenuOpen(true);
               }}
-              className={`flex h-8 w-8 items-center justify-center rounded-lg hover:bg-surface ${
-                nudgeMenu ? "menu-nudge" : ""
-              }`}
+              className="flex h-8 w-8 items-center justify-center rounded-lg hover:bg-surface"
             >
               <span aria-hidden className="space-y-[3px]">
                 <span className="block h-[2px] w-4 rounded bg-ink" />
@@ -497,7 +514,7 @@ export default function ChatDemo() {
                             active
                               ? "border-ink bg-ink text-white"
                               : "border-line bg-white text-muted hover:border-ink/35 hover:text-ink"
-                          }`}
+                          } ${nudgeChips && i === 0 ? "nudge-pulse" : ""}`}
                         >
                           {s.chip}
                         </button>
