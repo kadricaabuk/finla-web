@@ -1,5 +1,6 @@
 import FaceLockDemo from "./FaceLockDemo";
 import Reveal from "./Reveal";
+import EyebrowType from "./EyebrowType";
 
 const ITEMS = [
   {
@@ -38,7 +39,7 @@ export default function Security() {
 
         <div className="order-1 lg:order-2">
           <Reveal>
-            <p className="eyebrow mb-4">Güvenlik</p>
+            <EyebrowType className="mb-4">✓ guvenlik_dogrulandi</EyebrowType>
             <h2 className="h2-display max-w-lg text-4xl sm:text-5xl">
               Fintech disipliniyle inşa edildi.
             </h2>

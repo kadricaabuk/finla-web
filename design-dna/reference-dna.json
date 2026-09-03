@@ -1,0 +1,109 @@
+{
+  "meta": {
+    "note": "Three references chosen to triangulate Finla's actual position: one where-we-want-to-land (Ramp), one what-to-explicitly-avoid (Paraşüt — the direct local competitor pattern), one closest-genre-match (Cursor — conversational-AI-as-core-interface, same as ChatDemo). Hex values here are qualitative/directional, not pixel-measured (WebFetch returns markdown-converted text, not rendered CSS/screenshots) — reference-dna.json is meant to steer taste and structure in Faz 2, not to be copied literally. Grounded via WebFetch content-structure fetches (2026-09-03) plus known public design identity of each product.",
+    "created_at": "2026-09-03"
+  },
+  "references": [
+    {
+      "meta": {
+        "name": "Ramp (ramp.com)",
+        "description": "Global corporate-card/spend-management fintech. Chosen as the 'serious fintech that refuses to look boring' aspiration point — closest to what Finla should feel like as a category, several steps more mature/funded than Finla but directionally correct.",
+        "source_references": ["https://ramp.com"],
+        "created_at": "2026-09-03"
+      },
+      "design_system": {
+        "color": {
+          "palette_type": "monochromatic with a single sharp accent (historically a saturated blue/violet, used sparingly)",
+          "primary": { "hex": "#000000-ish near-black", "role": "display type, primary buttons" },
+          "secondary": { "hex": "#FFFFFF", "role": "background" },
+          "accent": { "hex": "single saturated accent (blue/violet family), used only for emphasis (links, key CTA, chart highlights)", "role": "emphasis, not decoration" },
+          "neutral": { "scale": "black → grays → white, tight range", "usage": "text hierarchy and card backgrounds only" },
+          "surface": { "background": "#FFFFFF", "card": "very light gray", "elevated": "#FFFFFF with hairline border" },
+          "contrast_strategy": "high-contrast dark-on-light dominant, near-monochrome outside the one accent"
+        },
+        "typography": {
+          "font_style_notes": "confident, oversized display type carrying most of the visual weight; grotesque/geometric sans; quantified claims ('7x fewer clicks') set at heading scale, not buried in body copy",
+          "font_families": { "heading": "proprietary/grotesque sans, bold", "body": "same family, regular weight", "mono": "occasional, for data/numbers" }
+        },
+        "spacing": { "content_density": "comfortable to spacious", "section_rhythm": "modular — each product line gets its own full-bleed section with a consistent capability→control→use-case rhythm" },
+        "components": { "component_notes": "product screenshots (real UI, not illustration) are the primary visual proof; feature sections repeat a strict 3-part pattern (claim, mechanism, concrete outcome)" }
+      },
+      "design_style": {
+        "aesthetic": { "mood": ["sharp", "efficient", "unshowy confident", "quantified"], "genre": "engineering-led fintech, closer to a dev-tool than a bank" },
+        "brand_voice_in_ui": { "tone": "outcome-first, numbers-forward, no fluff", "cta_style": "direct imperative" }
+      },
+      "visual_effects": {
+        "overview": { "effect_intensity": "subtle-accent", "performance_tier": "lightweight-medium", "primary_technology": "CSS + light JS, real product screenshots over ambient decoration" }
+      },
+      "takeaway_for_finla": "Real product proof (Ramp uses real screenshots; Finla has ChatDemo) beats decoration. Quantified, concrete claims set at real visual weight — Finla's copy already has this instinct ('form doldurarak', 'Bodrum'da yazıldı') but could push numbers/outcomes harder in supporting sections, not just the hero line."
+    },
+    {
+      "meta": {
+        "name": "Paraşüt (parasut.com)",
+        "description": "Turkey's leading SME accounting/e-fatura SaaS — direct local competitor, and the explicit anti-pattern the brief warns against ('kurumsal ve sıkıcı değil'). Included deliberately as a negative reference: this is the exact visual territory Finla must NOT drift into.",
+        "source_references": ["https://www.parasut.com"],
+        "created_at": "2026-09-03"
+      },
+      "design_system": {
+        "color": {
+          "palette_type": "complementary — teal/blue-green brand primary against warm coral/orange-peach secondary",
+          "primary": { "hex": "deep teal/blue-green", "role": "logo, primary CTAs" },
+          "accent": { "hex": "coral/salmon + orange-peach gradient", "role": "secondary CTAs, logo gradient" },
+          "surface": { "background": "#FFFFFF / light gray", "card": "light gray" },
+          "contrast_strategy": "conventional SaaS light-mode, no inversion sections"
+        },
+        "typography": { "font_style_notes": "bold geometric sans headers (Montserrat-like), medium-weight body — safe, generic SaaS type system with no distinguishing character" },
+        "components": { "component_notes": "three-column feature grids, horizontal banner cards per product line, star-rating social proof widgets — textbook conventional SaaS component kit" }
+      },
+      "design_style": {
+        "aesthetic": { "mood": ["professional", "safe", "conventional", "reassuring but forgettable"], "genre": "textbook SaaS / enterprise-adjacent SME software" },
+        "visual_language": { "ornamentation": "minimalist line icons + product screenshots, subtle banner gradients — nothing that couldn't be swapped onto any other SaaS product" },
+        "brand_voice_in_ui": { "tone": "professional yet approachable, mainstream KOBİ-software register ('kolaylıkla', 'zahmetsizce')" }
+      },
+      "visual_effects": { "overview": { "effect_intensity": "none", "primary_technology": "static, conventional" } },
+      "takeaway_for_finla": "This is the trap to avoid: gradient logo + teal/coral complementary palette + 3-column feature grid + star-rating social proof is the default 'Turkish SME SaaS' visual grammar. Finla's monochrome-plus-one-accent restraint and ChatDemo-as-hero already diverge from this correctly — Faz 2/3 must not accidentally regress toward a feature-grid, multi-color, gradient-logo look chasing 'more trustworthy = more color/icons'. Paraşüt also validates that Finla's anti-corporate copy voice is a genuine differentiator in this specific market, not just a generic brand-voice choice."
+    },
+    {
+      "meta": {
+        "name": "Cursor (cursor.com)",
+        "description": "AI coding agent. Chosen as the closest genre match for Finla's actual mechanic: the product IS a conversational AI interface, and the marketing site's job is to make that chat interaction itself the hero, not illustrate around it — exactly ChatDemo's role on heyfinla.com.",
+        "source_references": ["https://cursor.com"],
+        "created_at": "2026-09-03"
+      },
+      "design_system": {
+        "color": {
+          "palette_type": "monochromatic dark-mode-first with a single accent, light mode also supported",
+          "primary": { "hex": "near-black background (dark theme default)", "role": "background" },
+          "secondary": { "hex": "off-white/light gray", "role": "primary text" },
+          "accent": { "hex": "single restrained accent color", "role": "used only where it earns attention" },
+          "contrast_strategy": "high-contrast light-on-dark dominant"
+        },
+        "typography": { "font_style_notes": "clean modern sans, large confident display headline ('Cursor is your coding agent for building ambitious software'), size contrast does the hierarchy work — not color or decoration" }
+      },
+      "design_style": {
+        "aesthetic": { "mood": ["forward-thinking", "engineering-credible", "sophisticated", "not sterile"], "genre": "developer tool / applied-AI product" },
+        "visual_language": { "focal_strategy": "single hero element — an interactive/live-feeling product demo (desktop + CLI interface) is the centerpiece, not a supporting screenshot" },
+        "interaction_feel": { "loading_style": "product demo is staged as an active, in-progress interaction (agent 'building' something live), not a static screenshot" }
+      },
+      "visual_effects": {
+        "overview": { "effect_intensity": "subtle-accent", "primary_technology": "interactive product-demo framing over ambient effects" }
+      },
+      "takeaway_for_finla": "Confirms the right instinct already in the codebase: the conversational interface itself (ChatDemo) should be staged as an active, in-progress interaction — not a static phone screenshot — exactly as ChatDemo's typewriter + tool-call-chip choreography already does. Cursor also validates dark-mode-first restraint (one dominant tone + one accent) as the correct register for 'this is a serious tool, not a consumer toy' — reinforces keeping Finla's current single-accent-green discipline in Faz 2 rather than introducing a multi-color palette."
+    }
+  ],
+  "comparison_notes": {
+    "where_current_site_is_weak": [
+      "Typography is a single family (Inter) stretched across a ~17x size range via ad-hoc arbitrary values (5px–84px) rather than a formal, named type scale — Ramp and Cursor both lean on 2-3 clearly stepped display/heading/body roles with more deliberate size jumps.",
+      "No monospace/code-adjacent type token exists despite the product literally displaying tool-call names (musteri_bul, vergi_kontrol) that read like function calls — Cursor's genre uses mono accents for exactly this kind of content and it would reinforce credibility here.",
+      "Numbers/outcomes are present in the brand voice but not yet given real visual weight anywhere outside Tech's stats — Ramp sets quantified claims at heading scale as a structural pattern, which Finla's Features/Tech sections could borrow more deliberately.",
+      "Depth/shadow is currently reserved almost entirely for the hero phone mockup; the rest of the site is quite flat, which is a reasonable restraint but leaves little room for a secondary visual signature beyond the phone itself.",
+      "Stale README claim of a second display typeface (Space Grotesk) that was never actually wired in — a signal that typographic identity was intended to be more distinctive than what shipped."
+    ],
+    "where_references_are_strong": [
+      "Ramp: quantified, concrete claims set at real visual weight; real product proof over decoration.",
+      "Paraşüt (negative reference): shows precisely which local-market visual clichés to avoid — gradient logos, teal+coral complementary palettes, 3-column generic feature grids, star-rating badges.",
+      "Cursor: staging the core AI interaction as an active, in-progress demo rather than a static screenshot — validates and should extend ChatDemo's existing approach rather than replace it."
+    ],
+    "directional_conclusion": "Finla's current restraint (monochrome + one accent, no ambient effects, product-simulation-as-hero) is already the right instinct relative to all three references — the gap is not 'add more decoration' but 'sharpen the type system, give tool-call/mono content its own typographic register, and let quantified outcomes carry more visual weight' while explicitly not drifting toward Paraşüt's conventional SaaS grammar."
+  }
+}

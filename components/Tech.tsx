@@ -1,4 +1,5 @@
 import Reveal from "./Reveal";
+import EyebrowType from "./EyebrowType";
 
 const NODES = [
   {
@@ -24,10 +25,10 @@ const NODES = [
 ];
 
 const STATS = [
-  { value: "13", label: "uzman araç — fatura kesme, sorgu, gelen kutusu, Excel, kur…" },
-  { value: "%100", label: "GİB veri sözleşmesi — belge, uçtan uca GİB şemasıyla taşınır" },
-  { value: "<1 sn", label: "ilk yanıt — cevaplar gerçek zamanlı akışla gelir" },
-  { value: "7/24", label: "hep açık — fatura kesmek mesai saati tanımaz" },
+  { value: "13", label: "uzman araç: fatura kesme, sorgu, gelen kutusu, Excel, kur…" },
+  { value: "%100", label: "GİB veri sözleşmesi: belge, uçtan uca GİB şemasıyla taşınır" },
+  { value: "<1 sn", label: "ilk yanıt: cevaplar gerçek zamanlı akışla gelir" },
+  { value: "7/24", label: "hep açık: fatura kesmek mesai saati tanımaz" },
 ];
 
 export default function Tech() {
@@ -35,7 +36,7 @@ export default function Tech() {
     <section className="bg-ink py-20 text-white md:py-28" id="teknoloji">
       <div className="wrap">
         <Reveal>
-          <p className="eyebrow-dark mb-4">Kaputun altında</p>
+          <EyebrowType dark className="mb-4">✓ altyapi_hazir</EyebrowType>
           <h2 className="h2-display max-w-2xl text-4xl sm:text-5xl">
             Bir sohbet balonu değil.
             <br />
@@ -106,7 +107,7 @@ export default function Tech() {
         </div>
 
         <Reveal delay={200}>
-          <p className="mt-10 text-[13px] text-white/35">
+          <p className="mt-10 text-[13px] text-white/50">
             Altyapı: gerçek zamanlı akış mimarisi, sunucusuz fonksiyonlar ve uçtan uca
             korunan GİB veri şeması.
           </p>

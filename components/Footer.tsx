@@ -89,7 +89,7 @@ export default function Footer() {
             </div>
           </div>
 
-          <div className="mt-12 flex flex-col items-start justify-between gap-3 border-t border-line-dark pt-6 text-[13px] text-white/35 md:flex-row md:items-center">
+          <div className="mt-12 flex flex-col items-start justify-between gap-3 border-t border-line-dark pt-6 text-[13px] text-white/50 md:flex-row md:items-center">
             <span>© 2026 finla. Tüm hakları saklıdır.</span>
             <span>Bodrum&apos;da yazıldı. Kahveyle, tek cümleyle.</span>
           </div>

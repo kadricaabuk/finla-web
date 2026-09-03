@@ -11,8 +11,8 @@ const config: Config = {
         line: "#E7E7E4",
         "line-dark": "#242424",
         muted: "#67675F",
-        faint: "#9C9C96",
-        green: {
+        faint: "#73736D",
+        signal: {
           DEFAULT: "#16A34A",
           bright: "#22C55E",
           dark: "#15803D",
@@ -37,6 +37,21 @@ const config: Config = {
           "Segoe UI",
           "system-ui",
           "sans-serif",
+        ],
+        display: [
+          "var(--font-space-grotesk)",
+          "Space Grotesk",
+          "-apple-system",
+          "system-ui",
+          "sans-serif",
+        ],
+        mono: [
+          "var(--font-plex-mono)",
+          "IBM Plex Mono",
+          "ui-monospace",
+          "SFMono-Regular",
+          "Menlo",
+          "monospace",
         ],
       },
       maxWidth: {

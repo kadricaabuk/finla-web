@@ -1,10 +1,11 @@
 import Reveal from "./Reveal";
+import EyebrowType from "./EyebrowType";
 
 const STEPS = [
   {
     n: "01",
     title: "Derdini yaz",
-    desc: "“Yılmaz İnşaat'a 10.000 TL + KDV fatura kes” — günlük konuştuğun Türkçeyle, tek cümle.",
+    desc: "“Yılmaz İnşaat'a 10.000 TL + KDV fatura kes”: günlük konuştuğun Türkçeyle, tek cümle.",
   },
   {
     n: "02",
@@ -23,7 +24,7 @@ export default function HowItWorks() {
     <section className="bg-white py-20 md:py-28" id="nasil-calisir">
       <div className="wrap">
         <Reveal>
-          <p className="eyebrow mb-4">Nasıl çalışır</p>
+          <EyebrowType className="mb-4">→ akisi_goster</EyebrowType>
           <h2 className="h2-display max-w-xl text-4xl sm:text-5xl">
             Üç adım. İkisini finla yapıyor.
           </h2>
@@ -49,10 +50,10 @@ export default function HowItWorks() {
 
         <Reveal delay={200}>
           <p className="mt-14 flex flex-wrap items-center gap-3 text-[15px] text-muted md:mt-16">
-            <span className="rounded-full bg-green-soft px-3 py-1 text-[13px] font-semibold text-green-dark">
+            <span className="rounded-full bg-signal-soft px-3 py-1 text-[13px] font-semibold text-signal-dark">
               ~30 saniye
             </span>
-            Bir cümleden resmî faturaya ortalama süre — telefonunu cebinden çıkarıp koyman dahil.
+            Bir cümleden resmî faturaya ortalama süre (telefonunu cebinden çıkarıp koyman dahil).
           </p>
         </Reveal>
       </div>

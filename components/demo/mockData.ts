@@ -171,7 +171,7 @@ export const STATUS_LABEL: Record<InvoiceStatus, string> = {
 };
 
 export const STATUS_CLASS: Record<InvoiceStatus, string> = {
-  accepted: "bg-green-soft text-green-dark",
+  accepted: "bg-signal-soft text-signal-dark",
   pending: "bg-amber-soft text-amber",
   rejected: "bg-red-soft text-red",
 };

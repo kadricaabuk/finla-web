@@ -19,8 +19,8 @@ export default function Hero() {
           <Reveal>
             <p className="inline-flex items-center gap-2 rounded-full border border-line bg-white px-4 py-2 text-[13px] font-medium text-muted shadow-sm">
               <span className="relative flex h-2 w-2">
-                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-green-bright opacity-60" />
-                <span className="relative inline-flex h-2 w-2 rounded-full bg-green-bright" />
+                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-signal-bright opacity-60" />
+                <span className="relative inline-flex h-2 w-2 rounded-full bg-signal-bright" />
               </span>
               Erken erişim başladı
             </p>
@@ -38,7 +38,7 @@ export default function Hero() {
             <p className="mt-5 max-w-md text-lg leading-relaxed text-muted sm:mt-6 sm:text-xl">
               Form yok, menü yok, muhasebe programı ekranı yok.
               Fatura kesmek, sorgulamak ve paylaşmak için finla&apos;ya
-              yazman yeterli — gerisini yapay zekâ halleder.
+              yazman yeterli. Gerisini yapay zekâ halleder.
             </p>
           </Reveal>
 
@@ -65,7 +65,7 @@ export default function Hero() {
               </a>
               <p className="mt-3.5 max-w-sm text-sm leading-relaxed text-muted">
                 Türkiye&apos;nin sohbetle çalışan ilk e-fatura asistanını ilk
-                deneyenlerden ol — davetler kayıt sırasına göre gönderiliyor.
+                deneyenlerden ol. Davetler kayıt sırasına göre gönderiliyor.
               </p>
             </div>
           </Reveal>

@@ -67,7 +67,7 @@ function FaceScanIcon({ scanning, success }: { scanning: boolean; success: boole
     <div className="relative flex h-20 w-20 items-center justify-center">
       <span
         className={`absolute inset-0 rounded-full border-2 transition-opacity duration-500 ${
-          success ? "border-green-bright/50 opacity-0" : scanning ? "border-white/40 opacity-100" : "border-white/25 opacity-100"
+          success ? "border-signal-bright/50 opacity-0" : scanning ? "border-white/40 opacity-100" : "border-white/25 opacity-100"
         }`}
       />
       <span
@@ -101,10 +101,10 @@ function FaceScanIcon({ scanning, success }: { scanning: boolean; success: boole
         />
         <path
           d="M6 12h12"
-          stroke="#22C55E"
+          stroke="currentColor"
           strokeWidth="1.6"
           strokeLinecap="round"
-          className={`origin-center transition-opacity duration-300 ${scanning && !success ? "opacity-100" : "opacity-0"}`}
+          className={`origin-center stroke-signal-bright transition-opacity duration-300 ${scanning && !success ? "opacity-100" : "opacity-0"}`}
         />
       </svg>
 
@@ -116,10 +116,10 @@ function FaceScanIcon({ scanning, success }: { scanning: boolean; success: boole
         aria-hidden
         className={`absolute transition-opacity duration-300 ${success ? "opacity-100" : "opacity-0"}`}
       >
-        <circle cx="12" cy="12" r="10" fill="#22C55E" />
+        <circle cx="12" cy="12" r="10" className="fill-signal-bright" />
         <path
           d="M8 12.5l2.6 2.6L16 9.6"
-          stroke="#fff"
+          stroke="white"
           strokeWidth="2.4"
           strokeLinecap="round"
           strokeLinejoin="round"

@@ -1,12 +1,13 @@
 import { CONTACT_EMAIL, FAQS } from "@/content/site";
 import Reveal from "./Reveal";
+import EyebrowType from "./EyebrowType";
 
 export default function Faq() {
   return (
     <section className="bg-white py-20 md:py-28" id="sss">
       <div className="wrap grid gap-12 lg:grid-cols-[0.8fr_1.2fr]">
         <Reveal>
-          <p className="eyebrow mb-4">SSS</p>
+          <EyebrowType className="mb-4">→ soru_yanitla</EyebrowType>
           <h2 className="h2-display text-4xl sm:text-5xl">
             Aklındaki soruların cevabı muhtemelen burada.
           </h2>

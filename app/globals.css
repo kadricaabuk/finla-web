@@ -33,24 +33,27 @@ body {
   @apply mx-auto w-full max-w-wrap px-5 sm:px-8 md:px-10;
 }
 
+/* Agent Receipt eyebrows: mono, lowercase snake_case — echoes ChatDemo's
+   tool-call chips (musteri_bul, vergi_kontrol…) rather than a generic
+   uppercase label. Not decoration: each one names what the section does. */
 .eyebrow {
-  @apply text-[11px] font-semibold uppercase tracking-[0.22em] text-faint;
+  @apply font-mono text-[11px] font-medium tracking-[0.01em] text-faint;
 }
 
 .eyebrow-dark {
-  @apply text-[11px] font-semibold uppercase tracking-[0.22em] text-white/40;
+  @apply font-mono text-[11px] font-medium tracking-[0.01em] text-white/50;
 }
 
-/* Big display headings: SF-like tight tracking */
+/* Big display headings: Space Grotesk, tight tracking */
 .display {
-  @apply font-bold;
-  letter-spacing: -0.035em;
+  @apply font-display font-bold;
+  letter-spacing: -0.03em;
   line-height: 1.02;
 }
 
 .h2-display {
-  @apply font-bold;
-  letter-spacing: -0.028em;
+  @apply font-display font-bold;
+  letter-spacing: -0.025em;
   line-height: 1.08;
 }
 
