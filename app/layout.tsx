@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Inter, Space_Grotesk, IBM_Plex_Mono } from "next/font/google";
 import JsonLd from "@/components/JsonLd";
 import { SITE, SITE_URL } from "@/content/site";
 import "./globals.css";
@@ -10,6 +10,20 @@ const inter = Inter({
   weight: ["400", "500", "600", "700", "800"],
   display: "swap",
   variable: "--font-inter",
+});
+
+const spaceGrotesk = Space_Grotesk({
+  subsets: ["latin", "latin-ext"],
+  weight: ["500", "600", "700"],
+  display: "swap",
+  variable: "--font-space-grotesk",
+});
+
+const plexMono = IBM_Plex_Mono({
+  subsets: ["latin", "latin-ext"],
+  weight: ["400", "500"],
+  display: "swap",
+  variable: "--font-plex-mono",
 });
 
 export const metadata: Metadata = {
@@ -41,7 +55,10 @@ export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="tr" className={inter.variable}>
+    <html
+      lang="tr"
+      className={`${inter.variable} ${spaceGrotesk.variable} ${plexMono.variable}`}
+    >
       <head>
         <link rel="author" href="/llms.txt" type="text/plain" />
         <noscript>

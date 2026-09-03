@@ -1,0 +1,198 @@
+{
+  "meta": {
+    "name": "heyfinla.com — Current State",
+    "description": "Design DNA of the live heyfinla.com marketing site (finla-web repo, branch develop), extracted directly from source (tailwind.config.ts, app/globals.css, component usage counts) rather than screenshot color-measurement — the hex values below are literal, not estimated, since we have the source of truth.",
+    "source_references": [
+      "https://www.heyfinla.com",
+      "tailwind.config.ts",
+      "app/globals.css",
+      "components/*.tsx (grep survey of rounded-/shadow-/text-[ utility usage)"
+    ],
+    "created_at": "2026-09-03"
+  },
+  "design_system": {
+    "color": {
+      "palette_type": "monochromatic with a single semantic-green accent",
+      "primary": { "hex": "#0A0A0A", "role": "ink — primary text, primary buttons, focus rings" },
+      "secondary": { "hex": "#FAFAFA", "role": "paper — page background" },
+      "accent": { "hex": "#16A34A", "role": "green (bright #22C55E, dark #15803D, soft #E8F7EE) — success states, positive tool-call chips, CTA emphasis inside the chat demo" },
+      "neutral": {
+        "scale": ["#FAFAFA", "#F4F4F2", "#E7E7E4", "#9C9C96", "#67675F", "#242424", "#0A0A0A"],
+        "usage": "paper→surface→line for backgrounds/dividers (light end), faint→muted for secondary/tertiary text, ink for primary text and dark-mode surfaces (line-dark #242424 for dark-section borders)"
+      },
+      "semantic": {
+        "success": "#16A34A (soft bg #E8F7EE)",
+        "warning": "#B45309 (soft bg #FDF3E3)",
+        "error": "#DC2626 (soft bg #FDEBEB)",
+        "info": "not distinctly defined — reuses ink/muted"
+      },
+      "surface": { "background": "#FAFAFA", "card": "#F4F4F2", "elevated": "#FFFFFF" },
+      "contrast_strategy": "high-contrast dark-on-light dominant; one dark (Tech) section inverts to ink background with white/40 muted text for variety",
+      "measurement": { "method": "source-literal (read from tailwind.config.ts)", "not_estimated": true }
+    },
+    "typography": {
+      "type_scale": {
+        "display": { "size": "text-7xl / custom 84px on hero", "weight": "bold (700)", "line_height": "1.02", "tracking": "-0.035em" },
+        "heading_1": { "size": "text-5xl–text-6xl", "weight": "bold", "line_height": "1.08", "tracking": "-0.028em" },
+        "heading_2": { "size": "text-4xl", "weight": "bold", "line_height": "1.08", "tracking": "-0.028em" },
+        "heading_3": { "size": "text-xl", "weight": "semibold", "line_height": "1.2", "tracking": "normal" },
+        "body": { "size": "text-lg / text-base", "weight": "regular", "line_height": "1.5", "tracking": "normal" },
+        "body_small": { "size": "text-sm (14px) / 13px", "weight": "regular-medium", "line_height": "1.4", "tracking": "normal" },
+        "caption": { "size": "11–12.5px", "weight": "medium", "line_height": "1.3", "tracking": "normal" },
+        "overline": { "size": "11px (.eyebrow)", "weight": "semibold", "line_height": "1", "tracking": "0.22em uppercase" }
+      },
+      "font_families": {
+        "heading": "Inter (var(--font-inter)) — README claims 'Space Grotesk + Inter' but only Inter is wired in code; a stale doc, not an actual second family",
+        "body": "Inter, -apple-system, BlinkMacSystemFont, SF Pro Display, Segoe UI, system-ui",
+        "mono": "none defined — no monospace token exists despite the product being tool-call/code-adjacent"
+      },
+      "font_style_notes": "single-family system: geometric-humanist sans (Inter) doing all the work, from 84px display down to 5px micro-labels inside the ChatDemo phone mockup (an extreme range — 5px to 84px, ~17x) via arbitrary Tailwind bracket values rather than a formal scale. font-feature-settings 'cv11','ss01' enabled (Inter's single-story a / straight-leg alternates) for an SF-Pro-adjacent feel."
+    },
+    "spacing": {
+      "base_unit": "4px (Tailwind default)",
+      "scale": "Tailwind default scale, no custom overrides",
+      "content_density": "comfortable on marketing sections, extremely compact inside ChatDemo's simulated iPhone UI (5–13px text, tight padding to mimic real app chrome)",
+      "section_rhythm": "consistent generous vertical rhythm between major sections (Nav/Hero/Marquee/HowItWorks/Features/Showcase/Tech/Security/Audience/Faq/Footer), wrap max-width 76rem (1216px) with responsive gutters px-5→px-8→px-10"
+    },
+    "layout": {
+      "grid_system": "single centered column (.wrap) with internal flex/grid per section, no strict multi-column editorial grid",
+      "max_content_width": "76rem (1216px)",
+      "columns": "varies by section (2-col bento in Features, 3-col in HowItWorks/Audience)",
+      "gutter": "px-5 (mobile) / px-8 (sm) / px-10 (md+)",
+      "breakpoints": "Tailwind defaults (sm/md/lg/xl)",
+      "alignment_tendency": "centered, symmetric — no asymmetric/broadsheet layout"
+    },
+    "shape": {
+      "border_radius": {
+        "small": "rounded-md/rounded-lg (6–8px) — inputs, small chips",
+        "medium": "rounded-xl (12px) — cards, buttons",
+        "large": "rounded-2xl/3xl and arbitrary 2rem–3.2rem — phone mockup frames, hero panels",
+        "pill": "rounded-full — dominant pattern (55 occurrences: nav pills, buttons, avatar/status dots, tags)"
+      },
+      "border_usage": "subtle 1px (border-line #E7E7E4), occasional border-[1.5px] on emphasis; no bold/thick borders",
+      "divider_style": "hairline border-b/border-t in border-line, border-line/70 for lower-emphasis dividers"
+    },
+    "elevation": {
+      "shadow_style": "soft diffused, large-blur negative-spread — cinematic depth on hero/phone-mockup elements only; flat elsewhere",
+      "levels": {
+        "low": "shadow-sm — subtle card lift",
+        "medium": "shadow-[0_20px_50px_-20px_rgba(10,10,10,0.3)] — showcase panels",
+        "high": "shadow-[0_60px_120px_-30px_rgba(10,10,10,0.45),0_25px_50px_-20px_rgba(10,10,10,0.3)] — hero phone mockup, stacked dual-shadow for depth"
+      },
+      "depth_cues": "shadows on 'device' elements (phone mockups) only; flat surfaces for everything else — depth is reserved to sell the 'this is a real app' illusion of ChatDemo/Showcase"
+    },
+    "iconography": {
+      "style": "not surveyed in detail (no icon library detected in package.json beyond inline SVG) — likely hand-drawn inline SVG for chips/checkmarks/spinners",
+      "stroke_weight": "thin-medium, consistent with hairline border language",
+      "size_scale": "small (12–20px), matched to compact chat-UI density",
+      "preferred_set": "custom inline SVG, no Lucide/Heroicons dependency found"
+    },
+    "motion": {
+      "easing": "cubic-bezier(.16,1,.3,1) — signature 'ease-out-expo-ish' curve used consistently for rise/pop/reveal",
+      "duration_scale": { "micro": "150–400ms (pop, dot bounce)", "normal": "500–800ms (rise, reveal)", "macro": "1.2–2.4s (thinking dots, pulse-soft, flow-dash loops)" },
+      "entrance_pattern": "fade + translateY(14–26px) on scroll (IntersectionObserver via Reveal.tsx), staggered via --reveal-delay",
+      "exit_pattern": "none observed — mostly one-directional reveal, no exit choreography",
+      "philosophy": "minimal functional with one deliberately playful pocket: ChatDemo's typewriter + thinking-dots + tool-call spinner→checkmark sequence, which carries almost all the site's personality"
+    },
+    "components": {
+      "button_style": "pill (rounded-full), solid ink-on-paper primary / outline-line secondary, no gradient fills",
+      "input_style": "not heavily used (no live form — CTAs link out to a Google Form)",
+      "card_style": "rounded-xl/2xl, surface or white background, hairline border-line, shadow-sm at most",
+      "navigation_pattern": "sticky top nav with hash-anchor links + pill CTA button",
+      "modal_style": "ChatDemo's slide-out side menu is the closest analog — full-height panel, shadow-[8px_0_32px_rgba(0,0,0,0.18)]",
+      "list_style": "simple stacked rows inside phone-mockup UI (inbox/outbox), FAQ as native <details>/<summary>",
+      "component_notes": "ChatDemo.tsx is the load-bearing component: a fully-simulated iPhone frame (bg-ink chrome) containing a scripted, multi-scenario chat with typewriter text, bouncing 'thinking' dots, tool-call chips that animate spinner→checkmark (musteri_bul, vergi_kontrol, fatura_olustur…), and structured reply cards — this is where ~80% of the site's micro-typography (5–13px) and motion budget lives."
+    }
+  },
+  "design_style": {
+    "aesthetic": {
+      "mood": ["confident", "calm", "precise", "quietly witty", "trustworthy"],
+      "visual_metaphor": "a real iPhone Messages/Notes app, not a dashboard — the product performs as software you already know how to use",
+      "era_influence": "post-2020 Apple/SF-Pro flat minimalism (tight tracking, monochrome, pill controls) crossed with early-2020s dev-tool aesthetics (tool-call chips read like an agent trace/terminal log)",
+      "genre": "indie-confident fintech / dev-tool-adjacent SaaS — closer to Linear/Cursor than to a bank",
+      "personality_traits": ["direct", "unshowy", "a little cheeky", "meticulous about detail (micro-typography, spinner states)"],
+      "adjectives": ["monochrome", "tight", "conversational", "understated", "crisp"]
+    },
+    "visual_language": {
+      "complexity": "moderate — simple monochrome shell, but the ChatDemo interior is detail-rich",
+      "ornamentation": "subtle accents only (dotted bg-grid behind hero, hairline dividers, one green accent) — no decorative illustration",
+      "whitespace_usage": "generous between marketing sections, deliberately compact inside the simulated app UI (for realism)",
+      "visual_weight_distribution": "concentrated on the ChatDemo hero device; supporting sections are lighter/flatter by comparison",
+      "focal_strategy": "single hero element (the phone) carries the pitch; everything below reinforces it",
+      "contrast_level": "high (near-black ink on near-white paper), one full-inversion dark section (Tech) for rhythm",
+      "texture_usage": "none beyond the faint radial-dot bg-grid"
+    },
+    "composition": {
+      "hierarchy_method": "scale contrast (84px→11px range) plus spatial isolation of the hero device",
+      "balance_type": "symmetric, centered",
+      "flow_direction": "top-to-bottom single narrative, no diagonal or scattered composition",
+      "grouping_strategy": "section-by-section blocks separated by generous vertical rhythm and occasional hairline dividers",
+      "negative_space_role": "lets the phone-mockup detail read as premium rather than cluttered"
+    },
+    "imagery": {
+      "photo_treatment": "none — no lifestyle photography used; product is represented entirely via simulated UI, not photos",
+      "illustration_style": "none",
+      "graphic_elements": "dotted radial bg-grid, hairline dividers, small inline SVG icons/checkmarks/spinners",
+      "pattern_usage": "minimal — grid texture only behind hero",
+      "image_shape": "device-framed rectangles (rounded 2rem–3.2rem) for all product visuals"
+    },
+    "interaction_feel": {
+      "feedback_style": "state-driven micro-feedback (spinner→checkmark on tool calls, bounce dots while 'thinking')",
+      "hover_behavior": "not deeply surveyed — standard opacity/scale nudges expected, e.g. menu-nudge keyframe pulses the menu button to invite discovery",
+      "transition_personality": "smooth glide (ease-out-expo curve), not bouncy/elastic",
+      "loading_style": "narrative loading — 'thinking' dots and tool-call spinners are staged as part of the story, not generic spinners",
+      "microinteraction_density": "high inside ChatDemo, low-moderate elsewhere"
+    },
+    "brand_voice_in_ui": {
+      "tone": "direct, confident, lightly witty, anti-corporate ('Menü yok, yazışalım.', 'Bodrum'da yazıldı. Kahveyle, tek cümleyle.')",
+      "formality": "informal-professional — second person, contractions, no jargon",
+      "cta_style": "direct imperative ('Erken erişime katıl') — currently routes to an external Google Form (early access, no live signup/app-store yet)",
+      "empty_state_approach": "not applicable — no live app states rendered, only simulated ones",
+      "error_tone": "not observed in current site (no live forms beyond external link)"
+    }
+  },
+  "visual_effects": {
+    "overview": {
+      "effect_intensity": "subtle-accent",
+      "performance_tier": "lightweight",
+      "fallback_strategy": "reduce to CSS — prefers-reduced-motion is explicitly respected (globals.css collapses all animation-duration to 0.01ms; ChatDemo/menu-nudge define static reduced-motion fallbacks)",
+      "primary_technology": "CSS animations + IntersectionObserver (Reveal.tsx) + React state-driven timeline (ChatDemo) — no Canvas/WebGL/GSAP/Three.js anywhere in the stack"
+    },
+    "background_effects": {
+      "type": "none (dotted radial-gradient grid is static, not animated)",
+      "description": "static faint dot grid behind hero only",
+      "technology": "CSS radial-gradient",
+      "params": { "color_palette": "rgba(10,10,10,0.08) dots on paper", "speed": "n/a", "density": "26px grid", "opacity": "0.08", "blend_mode": "normal" }
+    },
+    "particle_systems": { "enabled": false },
+    "3d_elements": { "enabled": false },
+    "shader_effects": { "enabled": false },
+    "scroll_effects": {
+      "parallax": { "enabled": false, "layers": 0, "depth_range": "n/a", "speed_curve": "n/a" },
+      "scroll_triggered_animations": {
+        "enabled": true,
+        "trigger_points": "IntersectionObserver per-section via Reveal.tsx wrapper",
+        "animation_type": "fade-up (opacity + translateY(26px))",
+        "scrub_behavior": "none — binary reveal on enter, not scrubbed to scroll position"
+      },
+      "scroll_morphing": { "enabled": false, "description": "none" }
+    },
+    "text_effects": {
+      "type": "typewriter",
+      "description": "ChatDemo's chat bubbles type on character-by-character with a blinking cursor, timed per scripted scenario",
+      "technology": "React state + setTimeout/interval",
+      "params": { "split_strategy": "by-char", "animation_per_unit": "reveal one char per tick", "stagger": "sequential (not parallel)", "effect_style": "typewriter with blink caret" }
+    },
+    "cursor_effects": { "enabled": false },
+    "image_effects": { "enabled": false, "type": "none", "description": "no image galleries/hover-distortion — all visuals are simulated UI, not photography" },
+    "glassmorphism_neumorphism": { "enabled": false, "style": "none" },
+    "canvas_drawings": { "enabled": false },
+    "svg_animations": {
+      "enabled": true,
+      "type": "decorative-loop",
+      "description": "flow-dash keyframe animates strokeDashoffset on an SVG path (likely a connecting-line/flow diagram in Tech section) for a continuous 'data flowing' cue",
+      "params": { "animation_method": "CSS @keyframes on stroke-dashoffset", "path_morphing": false, "stroke_animation": true, "filter_effects": "none" }
+    },
+    "composite_notes": "The site's entire 'visual effects budget' is spent on ChatDemo's simulated-app choreography (typewriter + bounce-dots + spinner-to-checkmark tool chips + slide-out menu) rather than on ambient decoration (no particles, no WebGL, no parallax). This is a meaningful and consistent restraint: the product's realism argument comes from the UI simulation looking exactly like a real messaging app, not from decorative flourish. Any redesign should preserve this restraint — adding heavy WebGL/particle effects would work against the 'this is real software, not a marketing gimmick' credibility the current site is quietly building."
+  }
+}

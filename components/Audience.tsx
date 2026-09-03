@@ -1,4 +1,5 @@
 import Reveal from "./Reveal";
+import EyebrowType from "./EyebrowType";
 
 const PERSONAS = [
   {
@@ -23,7 +24,7 @@ export default function Audience() {
     <section className="border-y border-line bg-surface/60 py-20 md:py-28" id="kimler-icin">
       <div className="wrap">
         <Reveal>
-          <p className="eyebrow mb-4">Kimler için</p>
+          <EyebrowType className="mb-4">→ kimin_icin</EyebrowType>
           <h2 className="h2-display max-w-2xl text-4xl sm:text-5xl">
             Muhasebeci değil.
             <br />

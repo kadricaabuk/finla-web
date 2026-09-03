@@ -130,7 +130,7 @@ export default function InvoiceChatDemo() {
       <div className="p-7 pb-6">
         <h3 className="text-lg font-bold tracking-tight">Sohbetle e-Fatura & e-Arşiv kes</h3>
         <p className="mt-1.5 text-[15px] leading-relaxed text-muted">
-          Alıcı, tutar, vergi — hepsini tek cümleden çıkarır, onayınla GİB&apos;e iletir. Fatura
+          Alıcı, tutar, vergi: hepsini tek cümleden çıkarır, onayınla GİB&apos;e iletir. Fatura
           tipini (e-Fatura / e-Arşiv) alıcının mükellefiyetine göre kendi seçer.
         </p>
       </div>
@@ -160,7 +160,7 @@ export default function InvoiceChatDemo() {
               />
             )}
             {showBadge && (
-              <span className="shrink-0 animate-pop rounded-full bg-green-soft px-2.5 py-0.5 text-[11px] font-semibold text-green-dark">
+              <span className="shrink-0 animate-pop rounded-full bg-signal-soft px-2.5 py-0.5 text-[11px] font-semibold text-signal-dark">
                 GİB&apos;e iletildi
               </span>
             )}

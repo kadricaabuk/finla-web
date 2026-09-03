@@ -72,7 +72,7 @@ const STATUS_LABEL: Record<Status, string> = {
 };
 
 const STATUS_CLASS: Record<Status, string> = {
-  accepted: "bg-green-soft text-green-dark",
+  accepted: "bg-signal-soft text-signal-dark",
   pending: "bg-amber-soft text-amber",
   rejected: "bg-red-soft text-red",
 };
@@ -92,7 +92,7 @@ function Badge({ status, pulse }: { status: Status; pulse?: boolean }) {
   return (
     <span
       className={`inline-flex rounded-md px-2 py-0.5 text-[9.5px] font-semibold leading-none transition-all duration-500 ${STATUS_CLASS[status]} ${
-        pulse ? "scale-110 ring-2 ring-green-bright/40" : ""
+        pulse ? "scale-110 ring-2 ring-signal-bright/40" : ""
       }`}
     >
       {STATUS_LABEL[status]}
@@ -396,7 +396,7 @@ export default function InboxDemo() {
           </span>
           <span
             className={`flex flex-[1.15] items-center justify-center gap-1.5 rounded-xl bg-[#43A047] py-2.5 text-[11px] font-semibold text-white transition-transform duration-200 ${
-              phase === "approve" ? "scale-[0.94] brightness-110 ring-2 ring-green-bright/50" : ""
+              phase === "approve" ? "scale-[0.94] brightness-110 ring-2 ring-signal-bright/50" : ""
             }`}
           >
             <svg width="12" height="12" viewBox="0 0 24 24" fill="none" aria-hidden>

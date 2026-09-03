@@ -5,7 +5,7 @@ export const SITE_URL = "https://www.heyfinla.com";
 export const EARLY_ACCESS_FORM_URL = "https://forms.gle/5Kb6FWxL7x1aBjx3A";
 
 /** Genel iletişim adresi. */
-export const CONTACT_EMAIL = "hello@heyfinla.com";
+export const CONTACT_EMAIL = "kadri@heyfinla.com";
 
 export const SITE = {
   name: "finla",
@@ -45,10 +45,10 @@ export const FAQS = [
   },
   {
     q: "Muhasebecimden vazgeçmem mi gerekiyor?",
-    a: "Hayır — tam tersi. finla, muhasebecine giden günlük işleri (fatura kesme, takip, liste çıkarma) senin üzerinden alır; dönem sonunda tek komutla Excel çıktısını muhasebecinle paylaşırsın.",
+    a: "Hayır, tam tersi. finla, muhasebecine giden günlük işleri (fatura kesme, takip, liste çıkarma) senin üzerinden alır; dönem sonunda tek komutla Excel çıktısını muhasebecinle paylaşırsın.",
   },
   {
     q: "Nasıl başlarım?",
-    a: "finla şu anda erken erişimde. Erken erişim formunu doldurman yeterli, davetler kayıt sırasına göre gönderiliyor. Davetin geldiğinde uygulamayı indir, telefon numaranı SMS’le doğrula ve bir PIN oluştur. Mevcut e-fatura hesabını bağladıktan sonra ilk faturanı sohbetten kesebilirsin — hepsi birkaç dakika sürer.",
+    a: "finla şu anda erken erişimde. Erken erişim formunu doldurman yeterli, davetler kayıt sırasına göre gönderiliyor. Davetin geldiğinde uygulamayı indir, telefon numaranı SMS’le doğrula ve bir PIN oluştur. Mevcut e-fatura hesabını bağladıktan sonra ilk faturanı sohbetten kesebilirsin. Hepsi birkaç dakika sürer.",
   },
 ] as const;

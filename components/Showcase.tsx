@@ -2,19 +2,20 @@ import SuggestDemo from "./SuggestDemo";
 import InboxFlowDemo from "./InboxFlowDemo";
 import LoginDemo from "./LoginDemo";
 import Reveal from "./Reveal";
+import EyebrowType from "./EyebrowType";
 
 const SCREENS = [
   {
     Demo: SuggestDemo,
-    caption: "Boş sayfa korkusu yok — öneriler hazır",
+    caption: "Boş sayfa korkusu yok: öneriler hazır",
   },
   {
     Demo: InboxFlowDemo,
-    caption: "Giden'den gelen'e — menüden tek dokunuş",
+    caption: "Giden'den gelen'e: menüden tek dokunuş",
   },
   {
     Demo: LoginDemo,
-    caption: "Telefon + PIN — sonraki girişlerin bu kadar.",
+    caption: "Telefon + PIN: sonraki girişlerin bu kadar.",
   },
 ];
 
@@ -23,7 +24,7 @@ export default function Showcase() {
     <section className="overflow-hidden bg-white py-20 md:py-28">
       <div className="wrap">
         <Reveal className="text-center">
-          <p className="eyebrow mb-4">Uygulama</p>
+          <EyebrowType className="mb-4">→ uygulamayi_tara</EyebrowType>
           <h2 className="h2-display mx-auto max-w-2xl text-4xl sm:text-5xl">
             Sade görünür. Çünkü işi arkada finla yapar.
           </h2>

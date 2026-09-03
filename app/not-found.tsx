@@ -2,7 +2,7 @@ import Link from "next/link";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Sayfa bulunamadı — finla",
+  title: "Sayfa bulunamadı - finla",
   robots: { index: false },
 };
 

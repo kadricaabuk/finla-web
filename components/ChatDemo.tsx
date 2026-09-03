@@ -49,7 +49,7 @@ const SCENES: Scene[] = [
     command: "Bu ay kestiğim faturaları göster",
     tools: ["donem_belirle", "faturalari_getir", "ozet_olustur"],
     reply: {
-      title: "Temmuz 2026 — Giden Faturalar",
+      title: "Temmuz 2026 · Giden Faturalar",
       rows: [
         ["Kesilen", "14 fatura"],
         ["Toplam", "186.400,00 ₺"],
@@ -379,8 +379,8 @@ export default function ChatDemo() {
             </span>
             {screen === "chat" ? (
               <span className="relative flex h-8 w-8 items-center justify-center">
-                <span className="absolute inline-flex h-2 w-2 animate-ping rounded-full bg-green-bright opacity-60" />
-                <span className="relative h-2 w-2 rounded-full bg-green-bright" />
+                <span className="absolute inline-flex h-2 w-2 animate-ping rounded-full bg-signal-bright opacity-60" />
+                <span className="relative h-2 w-2 rounded-full bg-signal-bright" />
               </span>
             ) : (
               <span className="w-8" aria-hidden />
@@ -430,10 +430,10 @@ export default function ChatDemo() {
                           />
                         ) : (
                           <svg width="12" height="12" viewBox="0 0 24 24" fill="none" aria-hidden>
-                            <circle cx="12" cy="12" r="10" fill="#22C55E" />
+                            <circle cx="12" cy="12" r="10" className="fill-signal-bright" />
                             <path
                               d="M8 12.5l2.6 2.6L16 9.6"
-                              stroke="#fff"
+                              stroke="white"
                               strokeWidth="2.4"
                               strokeLinecap="round"
                               strokeLinejoin="round"
@@ -455,7 +455,7 @@ export default function ChatDemo() {
                           <span
                             className={`shrink-0 rounded-full px-2.5 py-1 text-[10.5px] font-semibold ${
                               scene.reply.badgeTone === "green"
-                                ? "bg-green-soft text-green-dark"
+                                ? "bg-signal-soft text-signal-dark"
                                 : "bg-amber-soft text-amber"
                             }`}
                           >
@@ -506,8 +506,8 @@ export default function ChatDemo() {
                   </div>
                   <button
                     type="button"
-                    title="Demo — aşağıdaki senaryolardan seç"
-                    aria-label="Demo — senaryolardan birini seç"
+                    title="Demo: aşağıdaki senaryolardan seç"
+                    aria-label="Demo: senaryolardan birini seç"
                     onClick={pauseAutoplay}
                     className="flex w-full cursor-default items-center gap-2 rounded-full bg-surface px-4 py-2.5 text-left text-[13px] text-faint"
                   >
@@ -708,7 +708,7 @@ function OutboxCard({
             {inv.date} · {inv.id}
           </p>
           <div className="flex shrink-0 items-center gap-1.5">
-            <span className="rounded-md bg-green-soft px-2 py-0.5 text-[10px] font-semibold text-green-dark">
+            <span className="rounded-md bg-signal-soft px-2 py-0.5 text-[10px] font-semibold text-signal-dark">
               ONAYLANDI
             </span>
             <Chevron open={open} />
